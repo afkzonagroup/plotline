@@ -1,0 +1,124 @@
+Source: European Commission, EUDR Information System - Operator API Reference, "GeoJSON File Description", updated 17 August 2026.
+https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html
+Retrieved 8 November 2026. Markup removed; the text is unchanged.
+
+EUDR GeoJSON File Description [#eudr-geojson-file-description] ¶ 
+ Updated 17 August 2026 
+ Technical contacts: See the [index.html#contact-information] Contact information section. 
+ Introduction [#introduction] ¶ 
+ This document is intended for users (Economic Operators) of the European Commission's EUDR Information System (IS) and for parties interested in producing compatible geolocation files for use in the central EUDR information system. 
+ The EUDR Information System supports the import, processing, and export of GeoJSON files for defining production place coordinates for declared commodities in a Due Diligence Statement. 
+ GeoJSON is an Internet Engineering Task Force RFC: [https://datatracker.ietf.org/doc/html/rfc7946] https://datatracker.ietf.org/doc/html/rfc7946 . It is a geospatial data interchange format based on JavaScript Object Notation (JSON). It defines several types of JSON objects and the way they are combined to represent data about geographic features, their properties, and their spatial extents. This standard implies a single option for the coordinate reference system (CRS). 
+ GeoJSON uses the World Geodetic System 1984 (WGS 84) [WGS84] datum, with longitude and latitude units of decimal degrees. 
+ Two variants of GeoJSON files can be produced and submitted depending on the application: Type I and Type II. The corresponding details can be found in section "File Variants Description" of this document. 
+ EUDR IS users: Please note that the first production version of the EUDR Information System will support the above standard exclusively. 
+ If the geocoordinates available to the Economic Operator are in another coordinates system, these must be converted to the WGS84 (EPSG:4326) coordinate system with longitude and latitude units of decimal degrees. There are several tools available that can convert most other coordinate system formats to the EUDR IS supported system format. 
+ Support of additional coordinate system formats is deferred for future versions of the system. 
+ Please also note that the information in this document applies to both the User Interface (UI) and the web services (API) for importing geocoordinates files. 
+ Definitions [#definitions] ¶ 
+ The GeoJSON file standard includes a number of mandatory and optional strings to define the various properties. 
+ A GeoJSON geometry object of any type other than "GeometryCollection" must have a member with the name "coordinates". The value of the coordinates member is always an array. The structure for the elements in this array is determined by the type of geometry. 
+ A position is the fundamental geometry construct. The "coordinates" member of a geometry object is composed of one position (in the case of a Point geometry), an array of positions (MultiPoint geometry), an array of arrays of positions (Polygons), or a multidimensional array of positions (MultiPolygon). 
+ A position is represented by an array of numbers. There must be at least two elements and may be more. The order of elements must follow longitude, latitude for coordinates in the EPSG:4326 geographic coordinate reference system. 
+ The terms "geometry" and "type" refer to the following case-sensitive strings: 
+ Point: Point geometry types consist of two coordinate values. 
+ MultiPoint: MultiPoint geometry types consist of two or more points (coordinate pairs). 
+ Polygon: Polygon geometry types consist of at least four pairs of coordinates and represent an enclosed area by these coordinate points. 
+ MultiPolygon: MultiPolygon geometry types contain two or more polygon definitions. 
+ Please note that the first and last point's coordinates of polygons are the same (they coincide geographically to close the shape). 
+ Important note: Polygons with holes (i.e., doughnut shapes) and shapes with crossing lines (like a figure eight for example) are not supported and will not be processed. If a doughnut shape is needed, it can be defined by combining two half-doughnut shaped polygons. 
+ Feature: A feature contains a single geometry object with the addition of properties. It will therefore be treated like described for the geometry types above. An example follows: 
+ { "type" : "Feature" , "geometry" : { "type" : "Point" , "coordinates" : [[ -105.029865 , 40.622831 ]] } } 
+ FeatureCollection: One or more features as in this example: 
+ { 
+ "type" : "FeatureCollection" , 
+ "features" : [ 
+ { 
+ "type" : "Feature" , 
+ "geometry" : { 
+ "type" : "Point" , 
+ "coordinates" : [ 102.0 , 0.5 ] 
+ }, 
+ "properties" : { 
+ "prop0" : "value0" 
+ } 
+ }, 
+ { 
+ "type" : "Feature" , 
+ "geometry" : { 
+ "type" : "Polygon" , 
+ "coordinates" : [ 
+ [ 
+ [ 100.0 , 0.0 ], 
+ [ 101.0 , 0.0 ], 
+ [ 101.0 , 1.0 ], 
+ [ 100.0 , 1.0 ], 
+ [ 100.0 , 0.0 ] 
+ ] 
+ ] 
+ }, 
+ "properties" : { 
+ "prop0" : "value0" , 
+ "prop1" : { 
+ "this" : "that" 
+ } 
+ } 
+ } 
+ ] 
+ } 
+ GeometryCollection: Two or more geometries. 
+ Please note that geometry types of "LineString" and "MultiLineString" do not represent valid geocoordinate shapes for declaring production places and will not be accepted/processed. 
+ The system additionally accepts and will process the following optional properties: 
+ ProducerName: An optional producer name for the corresponding geometry type. 
+ ProducerCountry: The country of production ISO2 code. 
+ ProductionPlace: An optional name for the corresponding geometry type. 
+ Area: This represents the area in Hectares of the geometry element "Point" in the GeoJSON file. 
+ Any other properties that are syntactically valid but not included in the optional properties list above, will be ignored. 
+ File Variants Description [#file-variants-description] ¶ 
+ For both variants described below, the file structure is the same. The only differences are in some of the properties provided. 
+ Type I [#type-i] ¶ 
+ This file variant is for use by the web services interface (API) and via the application's UI import utility at producer level and has the following characteristics: 
+ Includes any required features listed in the "Definitions" section (such as point, polygon). 
+ May include any of the optional properties. 
+ Type II [#type-ii] ¶ 
+ This file variant is for use via the application's UI file import utility at commodity level. It contains multiple producers grouped by the "ProducerName" and "ProducerCountry" and has the following additional characteristics: 
+ Includes any required features listed in the "Definitions" section (such as point, multipoint, polygon, multipolygon). 
+ Includes the "ProducerCountry" property per "Feature". 
+ May include any of the optional properties. 
+ Important notes for users of the EUDR IS: 
+ It is recommended to provide the optional GeoJSON property "ProductionPlace" in the generated geocoordinates files for importing into the system. This optional property is used to describe the production place name. The information system will truncate coordinate points to 6 decimal places before storing. It is superfluous/wasteful to send a higher resolution, and may, in extreme cases, even result in invalid geometries where the original is valid. 
+ The property "Area" for points is optional. If it is not provided, then it will be set by default to "4" (four) hectares when processed by the EUDR system. 
+ Examples [#examples] ¶ 
+ Type I – geocoordinates list - single producer [#type-i-geocoordinates-list-single-producer] ¶ 
+ { "type" : "FeatureCollection" , "features" :[{ "type" : "Feature" , "properties" :{ "ProductionPlace" : "FAZENDA TABOAO I" , "Area" : 23.72 , "ProducerCountry" : "BR" }, "geometry" :{ "type" : "Polygon" , "coordinates" :[[[ -49.004616 , -22.734322 ],[ -49.004675 , -22.734318 ],[ -49.00683 , -22.73526 ],[ -49.00909 , -22.736299 ],[ -49.009249 , -22.740009 ],[ -49.009222 , -22.74001 ],[ -49.00901 , -22.740068 ],[ -49.007133 , -22.740146 ],[ -49.005412 , -22.740232 ],[ -49.004941 , -22.740254 ],[ -49.004873 , -22.740185 ],[ -49.004855 , -22.740185 ],[ -49.004855 , -22.740179 ],[ -49.004811 , -22.740181 ],[ -49.004758 , -22.740166 ],[ -49.004722 , -22.739385 ],[ -49.004968 , -22.739492 ],[ -49.005333 , -22.739625 ],[ -49.005474 , -22.739651 ],[ -49.005552 , -22.739628 ],[ -49.00562 , -22.739575 ],[ -49.005653 , -22.739531 ],[ -49.005655 , -22.739477 ],[ -49.005627 , -22.739379 ],[ -49.005577 , -22.739193 ],[ -49.005505 , -22.738907 ],[ -49.005313 , -22.7387 ],[ -49.005248 , -22.738522 ],[ -49.005198 , -22.738186 ],[ -49.005113 , -22.738079 ],[ -49.004984 , -22.738001 ],[ -49.004763 , -22.737887 ],[ -49.004712 , -22.737884 ],[ -49.004541 , -22.734322 ],[ -49.004588 , -22.734324 ],[ -49.004616 , -22.734322 ]]]}},{ "type" : "Feature" , "properties" :{ "ProductionPlace" : "FAZENDA TABOAO II" , "Area" : 2.39 , "ProducerCountry" : "BR" }, "geometry" :{ "type" : "Polygon" , "coordinates" :[[[ -48.186023 , -22.880156 ],[ -48.186128 , -22.880023 ],[ -48.186271 , -22.879937 ],[ -48.186509 , -22.879844 ],[ -48.186677 , -22.879827 ],[ -48.186853 , -22.879906 ],[ -48.187031 , -22.880049 ],[ -48.187185 , -22.88015 ],[ -48.187214 , -22.880164 ],[ -48.187169 , -22.880216 ],[ -48.187148 , -22.880317 ],[ -48.187223 , -22.880431 ],[ -48.187365 , -22.880416 ],[ -48.187428 , -22.880321 ],[ -48.187456 , -22.88036 ],[ -48.187496 , -22.88055 ],[ -48.187491 , -22.88091 ],[ -48.187622 , -22.881404 ],[ -48.187712 , -22.881757 ],[ -48.187831 , -22.88206 ],[ -48.187887 , -22.88214 ],[ -48.187745 , -22.882094 ],[ -48.187763 , -22.882069 ],[ -48.18777 , -22.882054 ],[ -48.187776 , -22.882034 ],[ -48.187779 , -22.882013 ],[ -48.187779 , -22.881992 ],[ -48.187775 , -22.881971 ],[ -48.187768 , -22.881951 ],[ -48.187758 , -22.881932 ],[ -48.187745 , -22.881916 ],[ -48.187729 , -22.881901 ],[ -48.187711 , -22.88189 ],[ -48.187692 , -22.881881 ],[ -48.187671 , -22.881875 ],[ -48.187399 , -22.881809 ],[ -48.186554 , -22.881342 ],[ -48.186573 , -22.881321 ],[ -48.186581 , -22.881262 ],[ -48.186504 , -22.881222 ],[ -48.186498 , -22.881225 ],[ -48.18644 , -22.881271 ],[ -48.186319 , -22.881194 ],[ -48.186338 , -22.881162 ],[ -48.18631 , -22.881087 ],[ -48.186335 , -22.881001 ],[ -48.186286 , -22.880875 ],[ -48.186036 , -22.88084 ],[ -48.186046 , -22.880804 ],[ -48.186046 , -22.880447 ],[ -48.186023 , -22.880156 ]]]}}]} 
+ Type II – geocoordinates list - multiple producers [#type-ii-geocoordinates-list-multiple-producers] ¶ 
+ { "type" : "FeatureCollection" , "features" :[{ "type" : "Feature" , "properties" :{ "ProductionPlace" : "Cocoa Farm 01" , "Area" : 20813.59 , "ProducerCountry" : "AO" }, "geometry" :{ "type" : "Polygon" , "coordinates" :[[[ 17.10022 , -12.364149 ],[ 17.065887 , -12.427189 ],[ 17.133179 , -12.487532 ],[ 17.185364 , -12.479487 ],[ 17.234802 , -12.382928 ],[ 17.160645 , -12.317194 ],[ 17.10022 , -12.364149 ]]]}},{ "type" : "Feature" , "properties" :{ "ProductionPlace" : "Cocoa Farm 02" , "Area" : 20670.76 , "ProducerCountry" : "AO" }, "geometry" :{ "type" : "Polygon" , "coordinates" :[[[ 17.155151 , -12.534456 ],[ 17.216949 , -12.526412 ],[ 17.285614 , -12.612197 ],[ 17.219696 , -12.633638 ],[ 17.107086 , -12.656418 ],[ 17.078247 , -12.567968 ],[ 17.155151 , -12.534456 ]]]}},{ "type" : "Feature" , "properties" :{ "ProductionPlace" : "Cocoa Farm 03" , "Area" : 9551.97 , "ProducerCountry" : "CM" }, "geometry" :{ "type" : "Polygon" , "coordinates" :[[[ 12.032089 , 4.817997 ],[ 12.023163 , 4.756414 ],[ 12.056122 , 4.733832 ],[ 12.10144 , 4.730411 ],[ 12.13028 , 4.783785 ],[ 12.117233 , 4.817312 ],[ 12.069855 , 4.822786 ],[ 12.032089 , 4.817997 ]]]}},{ "type" : "Feature" , "properties" :{ "ProductionPlace" : "Cocoa Farm 04" , "Area" : 6950.29 , "ProducerCountry" : "CM" }, "geometry" :{ "type" : "Polygon" , "coordinates" :[[[ 12.137146 , 4.827576 ],[ 12.151566 , 4.791311 ],[ 12.205811 , 4.804312 ],[ 12.229156 , 4.874784 ],[ 12.184525 , 4.878889 ],[ 12.144012 , 4.861101 ],[ 12.137146 , 4.827576 ]]]}}]} 
+ Common GeoJSON file errors [#common-geojson-file-errors] ¶ 
+ 1. Coordinate lines crossing (i.e. figure eight shapes or intersecting polygon lines): 
+ 2. Overlapping sides: 
+ Internal overlap or holes where part of the polygon folds inward, creating a concave shape within the boundary are not accepted by the system: 
+ 3. Coordinate shapes with holes (i.e. doughnut shapes) 
+ Workaround: Two half-moon shapes: 
+ 4. "Open" polygons. All polygons must represent closed shapes (i.e. the 1st coordinate pair same as the last): 
+ 5. Invalid geometry types (i.e. LineString). 
+ 6. Coordinates representing straight lines. 
+ 7. Duplicate coordinates due to 6 decimals rounding in the system (For example the 2 following points with 10 decimals become the same after rounding): 
+ -5.8227391234 ,144.2567071234 -> -5.822739,144.256707
+-5.8227394567,144.2567074567 -> -5.822739,144.256707
+ 8. File syntax errors (e.g. missing ")" or "}"). 
+ 9. Invalid property names (e.g. "geometry" or incorrect property keyword case – "productionplace" instead of "ProductionPlace"). 
+ 10. Invalid file format (e.g. PDF, txt). 
+ 11. Invalid coordinate range (outside the value ranges 90/-90 or 180/-180). 
+ 12. Invalid producer country ISO2 code. 
+ 13. Password-protected files. 
+ 14. Data representation issues: 
+ For example, "Area": "3" instead of "Area": 3 will result in area = 0 because the value 3 in quotes is not recognized as a number which is what is expected. 
+ 15. Polygons with holes inside: 
+ The system does not take into accept polygons containing holes. The user will be shown an error message in this case. 
+ 16. GeoJSON files exceeding 25 Mb size limit 
+ Operators are required to obtain geolocation data that is as granular as possible. 
+ The system has a file size limit of 25 Mb for individual DDS submissions, which includes the total size of uploaded GeoJSON files. 
+ Workarounds: 
+ To ensure successful uploads, users are recommended to optimize their file sizes by: 
+ Reducing the number of points used to describe straight lines, using only two points to define a line instead of adding coordinates at frequent intervals (e.g., every 5-10 meters) (see Figure 1); 
+ Using single geolocation points to represent plots under 4 hectares, rather than creating polygons (see Figure 2).

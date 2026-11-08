@@ -1,0 +1,806 @@
+{
+ "about": "Generated from src/core/rules.ts by scripts/generate-vectors.mjs.",
+ "rules": [
+  {
+   "id": "input-limit",
+   "title": "Input exceeds a Plotline safety limit",
+   "status": "safety",
+   "severity": "error",
+   "sources": [],
+   "quote": null,
+   "fix": null
+  },
+  {
+   "id": "json-syntax",
+   "title": "File is not valid JSON",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 8",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "RFC 8259, section 2",
+     "url": "https://www.rfc-editor.org/rfc/rfc8259#section-2"
+    }
+   ],
+   "quote": "File syntax errors (e.g. missing \")\" or \"}\").",
+   "fix": null
+  },
+  {
+   "id": "json-duplicate-key",
+   "title": "Object has the same member name twice",
+   "status": "safety",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "RFC 8259, section 4",
+     "url": "https://www.rfc-editor.org/rfc/rfc8259#section-4"
+    },
+    {
+     "cite": "RFC 7493, section 2.3",
+     "url": "https://www.rfc-editor.org/rfc/rfc7493#section-2.3"
+    }
+   ],
+   "quote": "The names within an object SHOULD be unique.",
+   "fix": null
+  },
+  {
+   "id": "file-format",
+   "title": "File is not GeoJSON (or KML or CSV that Plotline can convert)",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 10",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    }
+   ],
+   "quote": "Invalid file format (e.g. PDF, txt).",
+   "fix": null
+  },
+  {
+   "id": "geojson-structure",
+   "title": "GeoJSON object is malformed",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Definitions",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "RFC 7946, section 3",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-3"
+    }
+   ],
+   "quote": "A GeoJSON geometry object of any type other than \"GeometryCollection\" must have a member with the name \"coordinates\".",
+   "fix": null
+  },
+  {
+   "id": "not-feature-collection",
+   "title": "Top level is not a FeatureCollection",
+   "status": "recommendation",
+   "severity": "info",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Examples",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    }
+   ],
+   "quote": null,
+   "fix": "Wraps the geometry or Feature in a FeatureCollection, as in the Commission's examples."
+  },
+  {
+   "id": "foreign-member",
+   "title": "Member not defined by GeoJSON",
+   "status": "recommendation",
+   "severity": "info",
+   "sources": [
+    {
+     "cite": "RFC 7946, section 6.1",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-6.1"
+    }
+   ],
+   "quote": null,
+   "fix": "Drops the member from the output; properties are kept."
+  },
+  {
+   "id": "bbox-member",
+   "title": "Bounding box member present",
+   "status": "recommendation",
+   "severity": "info",
+   "sources": [
+    {
+     "cite": "RFC 7946, section 5",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-5"
+    }
+   ],
+   "quote": null,
+   "fix": "Drops \"bbox\", which would be stale after repairs."
+  },
+  {
+   "id": "crs-member",
+   "title": "Legacy \"crs\" member naming WGS 84",
+   "status": "recommendation",
+   "severity": "info",
+   "sources": [
+    {
+     "cite": "RFC 7946, section 4",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-4"
+    }
+   ],
+   "quote": null,
+   "fix": "Drops the member; RFC 7946 coordinates are always WGS 84 longitude, latitude."
+  },
+  {
+   "id": "crs-not-wgs84",
+   "title": "Coordinates declared in a reference system other than WGS 84",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Introduction",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "RFC 7946, section 4",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-4"
+    }
+   ],
+   "quote": "If the geocoordinates available to the Economic Operator are in another coordinates system, these must be converted to the WGS84 (EPSG:4326) coordinate system with longitude and latitude units of decimal degrees.",
+   "fix": null
+  },
+  {
+   "id": "geometry-missing",
+   "title": "Plot has no geometry",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "Regulation (EU) 2023/1115, Article 9(1), point (d)",
+     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023R1115-20260918"
+    },
+    {
+     "cite": "Regulation (EU) 2023/1115, Annex II, point 3",
+     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023R1115-20260918"
+    }
+   ],
+   "quote": "the geolocation of all plots of land where the relevant commodities that the relevant product contains, or has been made using, were produced",
+   "fix": null
+  },
+  {
+   "id": "geometry-type-not-accepted",
+   "title": "Geometry type is not accepted",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Definitions",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 5",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "EUDR Information System, DDS V4 API reference, DdsProducerType, geometryGeojson",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/api/due-diligence-statement-v4.html"
+    }
+   ],
+   "quote": "Please note that geometry types of \"LineString\" and \"MultiLineString\" do not represent valid geocoordinate shapes for declaring production places and will not be accepted/processed.",
+   "fix": null
+  },
+  {
+   "id": "geometry-empty",
+   "title": "Geometry has no positions",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Definitions",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "Regulation (EU) 2023/1115, Article 2, point (28)",
+     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023R1115-20260918"
+    }
+   ],
+   "quote": "MultiPoint geometry types consist of two or more points (coordinate pairs).",
+   "fix": null
+  },
+  {
+   "id": "nested-geometry-collection",
+   "title": "GeometryCollection inside a GeometryCollection",
+   "status": "recommendation",
+   "severity": "warning",
+   "sources": [
+    {
+     "cite": "RFC 7946, section 3.1.8",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-3.1.8"
+    }
+   ],
+   "quote": "To maximize interoperability, implementations SHOULD avoid nested GeometryCollections.",
+   "fix": "Flattens the nested collection into its parent."
+  },
+  {
+   "id": "single-part-multi",
+   "title": "Multi-part geometry with one part",
+   "status": "recommendation",
+   "severity": "info",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Definitions",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "RFC 7946, section 3.1.8",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-3.1.8"
+    }
+   ],
+   "quote": "MultiPolygon: MultiPolygon geometry types contain two or more polygon definitions.",
+   "fix": "Replaces it with the single Point, Polygon or geometry it contains."
+  },
+  {
+   "id": "position-invalid",
+   "title": "Position is not an array of at least two numbers",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Definitions",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "RFC 7946, section 3.1.1",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-3.1.1"
+    }
+   ],
+   "quote": "A position is represented by an array of numbers. There must be at least two elements and may be more. The order of elements must follow longitude, latitude",
+   "fix": null
+  },
+  {
+   "id": "coordinate-out-of-range",
+   "title": "Longitude or latitude out of range",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 11",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Geolocation invalid coordinates\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    }
+   ],
+   "quote": "Invalid coordinate range (outside the value ranges 90/-90 or 180/-180).",
+   "fix": null
+  },
+  {
+   "id": "altitude-present",
+   "title": "Position has more than two values",
+   "status": "recommendation",
+   "severity": "info",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Definitions",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "RFC 7946, section 11.2",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-11.2"
+    }
+   ],
+   "quote": null,
+   "fix": "Keeps longitude and latitude and drops the extra values, which the plot location does not need."
+  },
+  {
+   "id": "excess-precision",
+   "title": "More than six decimal places",
+   "status": "recommendation",
+   "severity": "info",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Important notes for users of the EUDR IS",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Geolocation invalid coordinates\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    }
+   ],
+   "quote": "The information system will truncate coordinate points to 6 decimal places before storing. It is superfluous/wasteful to send a higher resolution, and may, in extreme cases, even result in invalid geometries where the original is valid.",
+   "fix": "Truncates every coordinate to six decimal places, exactly as the Information System does, and checks the result."
+  },
+  {
+   "id": "low-precision",
+   "title": "Fewer than six decimal places",
+   "status": "requirement",
+   "severity": "warning",
+   "sources": [
+    {
+     "cite": "Regulation (EU) 2023/1115, Article 2, point (28)",
+     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023R1115-20260918"
+    }
+   ],
+   "quote": "‘geolocation’ means the geographical location of a plot of land described by means of latitude and longitude coordinates corresponding to at least one latitude and one longitude point and using at least six decimal digits",
+   "fix": null
+  },
+  {
+   "id": "ring-not-closed",
+   "title": "Polygon ring is not closed",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 4",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "RFC 7946, section 3.1.6",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6"
+    }
+   ],
+   "quote": "\"Open\" polygons. All polygons must represent closed shapes (i.e. the 1st coordinate pair same as the last)",
+   "fix": "Appends the first position to close the ring."
+  },
+  {
+   "id": "ring-too-few-positions",
+   "title": "Polygon ring has fewer than four positions",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Definitions",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "RFC 7946, section 3.1.6",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6"
+    }
+   ],
+   "quote": "Polygon: Polygon geometry types consist of at least four pairs of coordinates and represent an enclosed area by these coordinate points.",
+   "fix": null
+  },
+  {
+   "id": "duplicate-vertex",
+   "title": "Same position twice in a row",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 7",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    }
+   ],
+   "quote": "Duplicate coordinates due to 6 decimals rounding in the system",
+   "fix": "Removes the repeated position."
+  },
+  {
+   "id": "spike",
+   "title": "Ring doubles back on itself (overlapping sides)",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 2",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    }
+   ],
+   "quote": "Overlapping sides",
+   "fix": "Removes the vertex at the tip of the spike; the enclosed area does not change."
+  },
+  {
+   "id": "zero-area-ring",
+   "title": "Ring encloses no area (all positions on one line)",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 6",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    }
+   ],
+   "quote": "Coordinates representing straight lines.",
+   "fix": null
+  },
+  {
+   "id": "self-intersection",
+   "title": "Ring crosses or touches itself",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Definitions",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 1",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Geolocation invalid geometry\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    }
+   ],
+   "quote": "Important note: Polygons with holes (i.e., doughnut shapes) and shapes with crossing lines (like a figure eight for example) are not supported and will not be processed.",
+   "fix": null
+  },
+  {
+   "id": "polygon-has-holes",
+   "title": "Polygon has a hole",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Definitions",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, items 3 and 15",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    }
+   ],
+   "quote": "If a doughnut shape is needed, it can be defined by combining two half-doughnut shaped polygons.",
+   "fix": null
+  },
+  {
+   "id": "multipolygon-parts-intersect",
+   "title": "Parts of a MultiPolygon overlap or share a side",
+   "status": "interpretation",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Geolocation invalid geometry\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    }
+   ],
+   "quote": "The geolocation data cannot contain invalid geometry (for ex, invalid polygons).",
+   "fix": null
+  },
+  {
+   "id": "winding-order",
+   "title": "Ring winding differs from the right-hand rule",
+   "status": "recommendation",
+   "severity": "info",
+   "sources": [
+    {
+     "cite": "RFC 7946, section 3.1.6",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6"
+    }
+   ],
+   "quote": "A linear ring MUST follow the right-hand rule with respect to the area it bounds, i.e., exterior rings are counterclockwise, and holes are clockwise.",
+   "fix": "Reverses the ring. RFC 7946 also says parsers SHOULD NOT reject the other order, and the Commission's documents do not require one."
+  },
+  {
+   "id": "antimeridian-crossing",
+   "title": "Polygon crosses the 180th meridian",
+   "status": "recommendation",
+   "severity": "warning",
+   "sources": [
+    {
+     "cite": "RFC 7946, section 3.1.9",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-3.1.9"
+    },
+    {
+     "cite": "RFC 7946, section 3.1.1",
+     "url": "https://www.rfc-editor.org/rfc/rfc7946#section-3.1.1"
+    }
+   ],
+   "quote": "Any geometry that crosses the antimeridian SHOULD be represented by cutting it in two such that neither part's representation crosses the antimeridian.",
+   "fix": "Cuts the polygon at 180° into a MultiPolygon when both parts are valid; otherwise leaves it for manual repair."
+  },
+  {
+   "id": "polygon-area-tiny",
+   "title": "Polygon smaller than 0.0001 ha",
+   "status": "recommendation",
+   "severity": "warning",
+   "sources": [
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Geolocation area for point\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    }
+   ],
+   "quote": null,
+   "fix": null
+  },
+  {
+   "id": "property-name-case",
+   "title": "Property name in the wrong letter case",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 9",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    }
+   ],
+   "quote": "Invalid property names (e.g. \"geometry\" or incorrect property keyword case – \"productionplace\" instead of \"ProductionPlace\").",
+   "fix": "Renames the property to the exact name, when that name is not already used."
+  },
+  {
+   "id": "property-type",
+   "title": "Property value has the wrong type",
+   "status": "interpretation",
+   "severity": "warning",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Definitions",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "EUDR Information System, DDS V4 API reference, DdsProducerType",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/api/due-diligence-statement-v4.html"
+    }
+   ],
+   "quote": null,
+   "fix": null
+  },
+  {
+   "id": "producer-country-invalid",
+   "title": "ProducerCountry is not an ISO 3166-1 alpha-2 code",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 12",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Production country\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    },
+    {
+     "cite": "EUDR Information System, DDS V4 API reference, DdsProducerType, country",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/api/due-diligence-statement-v4.html"
+    },
+    {
+     "cite": "ISO 3166-1 alpha-2",
+     "url": "https://www.iso.org/iso-3166-country-codes.html"
+    }
+   ],
+   "quote": "Invalid producer country ISO2 code.",
+   "fix": null
+  },
+  {
+   "id": "producer-country-format",
+   "title": "ProducerCountry in lower case or with spaces",
+   "status": "recommendation",
+   "severity": "warning",
+   "sources": [
+    {
+     "cite": "ISO 3166-1 alpha-2",
+     "url": "https://www.iso.org/iso-3166-country-codes.html"
+    }
+   ],
+   "quote": null,
+   "fix": "Trims spaces and converts the code to upper case."
+  },
+  {
+   "id": "producer-country-user-assigned",
+   "title": "ProducerCountry uses the user-assigned code XK",
+   "status": "interpretation",
+   "severity": "warning",
+   "sources": [
+    {
+     "cite": "ISO 3166-1 alpha-2",
+     "url": "https://www.iso.org/iso-3166-country-codes.html"
+    }
+   ],
+   "quote": null,
+   "fix": null
+  },
+  {
+   "id": "producer-country-missing",
+   "title": "ProducerCountry missing",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, File Variants Description, Type II",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Production country\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    }
+   ],
+   "quote": "Includes the \"ProducerCountry\" property per \"Feature\".",
+   "fix": "With --country, fills in the given code."
+  },
+  {
+   "id": "producer-name-too-long",
+   "title": "ProducerName longer than 500 characters",
+   "status": "requirement",
+   "severity": "warning",
+   "sources": [
+    {
+     "cite": "EUDR Information System, DDS V4 API reference, DdsProducerType, name (string, max 500)",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/api/due-diligence-statement-v4.html"
+    }
+   ],
+   "quote": null,
+   "fix": null
+  },
+  {
+   "id": "production-place-missing",
+   "title": "ProductionPlace missing",
+   "status": "recommendation",
+   "severity": "info",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Important notes for users of the EUDR IS",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    }
+   ],
+   "quote": "It is recommended to provide the optional GeoJSON property \"ProductionPlace\" in the generated geocoordinates files for importing into the system.",
+   "fix": null
+  },
+  {
+   "id": "unknown-properties",
+   "title": "Properties the Information System ignores",
+   "status": "recommendation",
+   "severity": "info",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Definitions",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    }
+   ],
+   "quote": "Any other properties that are syntactically valid but not included in the optional properties list above, will be ignored.",
+   "fix": "With --strip-unknown-properties, removes them."
+  },
+  {
+   "id": "area-not-number",
+   "title": "Area is not a number",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 14",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    }
+   ],
+   "quote": "For example, \"Area\": \"3\" instead of \"Area\": 3 will result in area = 0 because the value 3 in quotes is not recognized as a number which is what is expected.",
+   "fix": "Converts a text value that is a plain decimal number (for example \"3\" or \"2.5\") to a number."
+  },
+  {
+   "id": "point-area-missing",
+   "title": "Point plot without Area",
+   "status": "requirement",
+   "severity": "warning",
+   "sources": [
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Geolocation area for point\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    },
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Important notes for users of the EUDR IS",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    }
+   ],
+   "quote": "In case a point is provided for a geolocation, the area is mandatory. If the user provided no data, the value 4 (ha) is introduced by default for the area.",
+   "fix": null
+  },
+  {
+   "id": "point-area-below-minimum",
+   "title": "Point Area below 0.0001 ha",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Geolocation area for point\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    }
+   ],
+   "quote": "When provided, the area must also be higher or equal to 0.0001ha.",
+   "fix": null
+  },
+  {
+   "id": "point-area-above-4ha",
+   "title": "Point used for a plot of more than 4 ha",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Geolocation area for point\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    },
+    {
+     "cite": "Regulation (EU) 2023/1115, Article 2, point (28)",
+     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023R1115-20260918"
+    }
+   ],
+   "quote": "If the commodity is not cattle and the user provided a value higher than 4ha then the system will raise an error.",
+   "fix": null
+  },
+  {
+   "id": "area-mismatch",
+   "title": "Area property differs from the polygon's computed area",
+   "status": "recommendation",
+   "severity": "info",
+   "sources": [],
+   "quote": null,
+   "fix": null
+  },
+  {
+   "id": "no-plots",
+   "title": "File contains no plots",
+   "status": "interpretation",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "Regulation (EU) 2023/1115, Article 9(1), point (d)",
+     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023R1115-20260918"
+    }
+   ],
+   "quote": null,
+   "fix": null
+  },
+  {
+   "id": "file-too-large",
+   "title": "Geolocation data larger than the Information System accepts",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Geolocation data size\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    },
+    {
+     "cite": "EUDR Information System, GeoJSON File Description, Common GeoJSON file errors, item 16",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/geojson-description.html"
+    },
+    {
+     "cite": "Implementing Regulation (EU) 2024/3084 as amended by (EU) 2026/1565, Article 8a (grouping)",
+     "url": "https://eur-lex.europa.eu/eli/reg_impl/2026/1565/oj"
+    }
+   ],
+   "quote": "The total size of geolocation data per DDS cannot exceed a certain amount (presently set to 25Mb).",
+   "fix": "`plotline split` divides the file into parts within the limit, one per statement; the statements can then be grouped."
+  },
+  {
+   "id": "too-many-producers",
+   "title": "More producers than one commodity entry accepts",
+   "status": "requirement",
+   "severity": "error",
+   "sources": [
+    {
+     "cite": "EUDR Information System, API and UI Validation Rules, \"Geolocation Producers information\"",
+     "url": "https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html"
+    }
+   ],
+   "quote": "The total number of producers data per commodity cannot exceed a certain amount (presently set to 1000). The total number of producers data per DDS cannot exceed a certain amount (presently set to 10,000).",
+   "fix": "`plotline split --max-producers` divides the file by producer."
+  },
+  {
+   "id": "duplicate-plot",
+   "title": "Same geometry appears more than once",
+   "status": "recommendation",
+   "severity": "warning",
+   "sources": [],
+   "quote": null,
+   "fix": "Removes later copies whose geometry and properties are both identical; copies with different properties are left for you to decide."
+  },
+  {
+   "id": "overlapping-plots",
+   "title": "Two plots overlap",
+   "status": "recommendation",
+   "severity": "warning",
+   "sources": [],
+   "quote": null,
+   "fix": null
+  },
+  {
+   "id": "check-limit-reached",
+   "title": "A geometry check stopped at its work limit",
+   "status": "safety",
+   "severity": "warning",
+   "sources": [],
+   "quote": null,
+   "fix": null
+  }
+ ]
+}

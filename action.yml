@@ -1,0 +1,70 @@
+# Copyright 2026 MB AFKzona Group
+# SPDX-License-Identifier: AGPL-3.0-only
+name: Plotline EUDR geolocation check
+description: Validate plot geolocation files (GeoJSON, KML, CSV) in a repository against the EU Deforestation Regulation and the EUDR Information System rules.
+author: AFKzona Group
+branding:
+  icon: map-pin
+  color: green
+inputs:
+  glob:
+    description: Files to check, as a glob relative to root ("**" matches directories).
+    default: '**/*.geojson'
+  root:
+    description: Directory to search, relative to the workspace.
+    default: '.'
+  commodity:
+    description: cattle, cocoa, coffee, oil-palm, rubber, soya or wood (optional).
+    default: ''
+  variant:
+    description: type-i or type-ii.
+    default: 'type-i'
+  fail-on:
+    description: Fail the step on "error", on "warning" (errors or warnings) or "never".
+    default: 'error'
+  max-bytes:
+    description: Size limit per due diligence statement in bytes.
+    default: '25000000'
+outputs:
+  failed:
+    description: '"true" when a checked file failed, otherwise "false".'
+    value: ${{ steps.check.outputs.failed }}
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      with:
+        node-version: '22'
+    - name: Build Plotline
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: |
+        set -euo pipefail
+        npm ci --ignore-scripts --no-audit --no-fund
+        npx tsc -p tsconfig.build.json
+    - name: Check files
+      id: check
+      shell: bash
+      working-directory: ${{ github.workspace }}
+      # Inputs reach the script only through environment variables and are
+      # passed as separate arguments, so they cannot inject shell code.
+      env:
+        PLOTLINE_GLOB: ${{ inputs.glob }}
+        PLOTLINE_ROOT: ${{ inputs.root }}
+        PLOTLINE_COMMODITY: ${{ inputs.commodity }}
+        PLOTLINE_VARIANT: ${{ inputs.variant }}
+        PLOTLINE_FAIL_ON: ${{ inputs.fail-on }}
+        PLOTLINE_MAX_BYTES: ${{ inputs.max-bytes }}
+      run: |
+        set -euo pipefail
+        case "$PLOTLINE_ROOT" in
+          /* | .. | ../* | */.. | */../* | *$'\n'* | *$'\r'*) echo "::error::root must be a relative path inside the workspace" >&2; exit 2 ;;
+        esac
+        args=(validate --root "$PLOTLINE_ROOT" --glob "$PLOTLINE_GLOB" --format github --variant "$PLOTLINE_VARIANT" --fail-on "$PLOTLINE_FAIL_ON" --max-bytes "$PLOTLINE_MAX_BYTES")
+        if [ -n "$PLOTLINE_COMMODITY" ]; then args+=(--commodity "$PLOTLINE_COMMODITY"); fi
+        code=0
+        node "$GITHUB_ACTION_PATH/dist/cli/main.js" "${args[@]}" || code=$?
+        # The output is derived from this run's exit code only: nothing from
+        # the checked files can reach $GITHUB_OUTPUT.
+        if [ "$code" = "0" ]; then echo "failed=false" >> "$GITHUB_OUTPUT"; elif [ "$code" = "1" ]; then echo "failed=true" >> "$GITHUB_OUTPUT"; fi
+        exit "$code"

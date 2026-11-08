@@ -1,0 +1,722 @@
+{
+ "about": "Inputs of the shared TypeScript/Python test vectors. Expected results are in cases.json (scripts/generate-vectors.mjs).",
+ "cases": [
+  {
+   "name": "official example Type I",
+   "format": "geojson",
+   "input": "{ \"type\" : \"FeatureCollection\" , \"features\" :[{ \"type\" : \"Feature\" , \"properties\" :{ \"ProductionPlace\" : \"FAZENDA TABOAO I\" , \"Area\" : 23.72 , \"ProducerCountry\" : \"BR\" }, \"geometry\" :{ \"type\" : \"Polygon\" , \"coordinates\" :[[[ -49.004616 , -22.734322 ],[ -49.004675 , -22.734318 ],[ -49.00683 , -22.73526 ],[ -49.00909 , -22.736299 ],[ -49.009249 , -22.740009 ],[ -49.009222 , -22.74001 ],[ -49.00901 , -22.740068 ],[ -49.007133 , -22.740146 ],[ -49.005412 , -22.740232 ],[ -49.004941 , -22.740254 ],[ -49.004873 , -22.740185 ],[ -49.004855 , -22.740185 ],[ -49.004855 , -22.740179 ],[ -49.004811 , -22.740181 ],[ -49.004758 , -22.740166 ],[ -49.004722 , -22.739385 ],[ -49.004968 , -22.739492 ],[ -49.005333 , -22.739625 ],[ -49.005474 , -22.739651 ],[ -49.005552 , -22.739628 ],[ -49.00562 , -22.739575 ],[ -49.005653 , -22.739531 ],[ -49.005655 , -22.739477 ],[ -49.005627 , -22.739379 ],[ -49.005577 , -22.739193 ],[ -49.005505 , -22.738907 ],[ -49.005313 , -22.7387 ],[ -49.005248 , -22.738522 ],[ -49.005198 , -22.738186 ],[ -49.005113 , -22.738079 ],[ -49.004984 , -22.738001 ],[ -49.004763 , -22.737887 ],[ -49.004712 , -22.737884 ],[ -49.004541 , -22.734322 ],[ -49.004588 , -22.734324 ],[ -49.004616 , -22.734322 ]]]}},{ \"type\" : \"Feature\" , \"properties\" :{ \"ProductionPlace\" : \"FAZENDA TABOAO II\" , \"Area\" : 2.39 , \"ProducerCountry\" : \"BR\" }, \"geometry\" :{ \"type\" : \"Polygon\" , \"coordinates\" :[[[ -48.186023 , -22.880156 ],[ -48.186128 , -22.880023 ],[ -48.186271 , -22.879937 ],[ -48.186509 , -22.879844 ],[ -48.186677 , -22.879827 ],[ -48.186853 , -22.879906 ],[ -48.187031 , -22.880049 ],[ -48.187185 , -22.88015 ],[ -48.187214 , -22.880164 ],[ -48.187169 , -22.880216 ],[ -48.187148 , -22.880317 ],[ -48.187223 , -22.880431 ],[ -48.187365 , -22.880416 ],[ -48.187428 , -22.880321 ],[ -48.187456 , -22.88036 ],[ -48.187496 , -22.88055 ],[ -48.187491 , -22.88091 ],[ -48.187622 , -22.881404 ],[ -48.187712 , -22.881757 ],[ -48.187831 , -22.88206 ],[ -48.187887 , -22.88214 ],[ -48.187745 , -22.882094 ],[ -48.187763 , -22.882069 ],[ -48.18777 , -22.882054 ],[ -48.187776 , -22.882034 ],[ -48.187779 , -22.882013 ],[ -48.187779 , -22.881992 ],[ -48.187775 , -22.881971 ],[ -48.187768 , -22.881951 ],[ -48.187758 , -22.881932 ],[ -48.187745 , -22.881916 ],[ -48.187729 , -22.881901 ],[ -48.187711 , -22.88189 ],[ -48.187692 , -22.881881 ],[ -48.187671 , -22.881875 ],[ -48.187399 , -22.881809 ],[ -48.186554 , -22.881342 ],[ -48.186573 , -22.881321 ],[ -48.186581 , -22.881262 ],[ -48.186504 , -22.881222 ],[ -48.186498 , -22.881225 ],[ -48.18644 , -22.881271 ],[ -48.186319 , -22.881194 ],[ -48.186338 , -22.881162 ],[ -48.18631 , -22.881087 ],[ -48.186335 , -22.881001 ],[ -48.186286 , -22.880875 ],[ -48.186036 , -22.88084 ],[ -48.186046 , -22.880804 ],[ -48.186046 , -22.880447 ],[ -48.186023 , -22.880156 ]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "official example Type II",
+   "format": "geojson",
+   "input": "{ \"type\" : \"FeatureCollection\" , \"features\" :[{ \"type\" : \"Feature\" , \"properties\" :{ \"ProductionPlace\" : \"Cocoa Farm 01\" , \"Area\" : 20813.59 , \"ProducerCountry\" : \"AO\" }, \"geometry\" :{ \"type\" : \"Polygon\" , \"coordinates\" :[[[ 17.10022 , -12.364149 ],[ 17.065887 , -12.427189 ],[ 17.133179 , -12.487532 ],[ 17.185364 , -12.479487 ],[ 17.234802 , -12.382928 ],[ 17.160645 , -12.317194 ],[ 17.10022 , -12.364149 ]]]}},{ \"type\" : \"Feature\" , \"properties\" :{ \"ProductionPlace\" : \"Cocoa Farm 02\" , \"Area\" : 20670.76 , \"ProducerCountry\" : \"AO\" }, \"geometry\" :{ \"type\" : \"Polygon\" , \"coordinates\" :[[[ 17.155151 , -12.534456 ],[ 17.216949 , -12.526412 ],[ 17.285614 , -12.612197 ],[ 17.219696 , -12.633638 ],[ 17.107086 , -12.656418 ],[ 17.078247 , -12.567968 ],[ 17.155151 , -12.534456 ]]]}},{ \"type\" : \"Feature\" , \"properties\" :{ \"ProductionPlace\" : \"Cocoa Farm 03\" , \"Area\" : 9551.97 , \"ProducerCountry\" : \"CM\" }, \"geometry\" :{ \"type\" : \"Polygon\" , \"coordinates\" :[[[ 12.032089 , 4.817997 ],[ 12.023163 , 4.756414 ],[ 12.056122 , 4.733832 ],[ 12.10144 , 4.730411 ],[ 12.13028 , 4.783785 ],[ 12.117233 , 4.817312 ],[ 12.069855 , 4.822786 ],[ 12.032089 , 4.817997 ]]]}},{ \"type\" : \"Feature\" , \"properties\" :{ \"ProductionPlace\" : \"Cocoa Farm 04\" , \"Area\" : 6950.29 , \"ProducerCountry\" : \"CM\" }, \"geometry\" :{ \"type\" : \"Polygon\" , \"coordinates\" :[[[ 12.137146 , 4.827576 ],[ 12.151566 , 4.791311 ],[ 12.205811 , 4.804312 ],[ 12.229156 , 4.874784 ],[ 12.184525 , 4.878889 ],[ 12.144012 , 4.861101 ],[ 12.137146 , 4.827576 ]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "official example Type II as type-ii",
+   "format": "geojson",
+   "input": "{ \"type\" : \"FeatureCollection\" , \"features\" :[{ \"type\" : \"Feature\" , \"properties\" :{ \"ProductionPlace\" : \"Cocoa Farm 01\" , \"Area\" : 20813.59 , \"ProducerCountry\" : \"AO\" }, \"geometry\" :{ \"type\" : \"Polygon\" , \"coordinates\" :[[[ 17.10022 , -12.364149 ],[ 17.065887 , -12.427189 ],[ 17.133179 , -12.487532 ],[ 17.185364 , -12.479487 ],[ 17.234802 , -12.382928 ],[ 17.160645 , -12.317194 ],[ 17.10022 , -12.364149 ]]]}},{ \"type\" : \"Feature\" , \"properties\" :{ \"ProductionPlace\" : \"Cocoa Farm 02\" , \"Area\" : 20670.76 , \"ProducerCountry\" : \"AO\" }, \"geometry\" :{ \"type\" : \"Polygon\" , \"coordinates\" :[[[ 17.155151 , -12.534456 ],[ 17.216949 , -12.526412 ],[ 17.285614 , -12.612197 ],[ 17.219696 , -12.633638 ],[ 17.107086 , -12.656418 ],[ 17.078247 , -12.567968 ],[ 17.155151 , -12.534456 ]]]}},{ \"type\" : \"Feature\" , \"properties\" :{ \"ProductionPlace\" : \"Cocoa Farm 03\" , \"Area\" : 9551.97 , \"ProducerCountry\" : \"CM\" }, \"geometry\" :{ \"type\" : \"Polygon\" , \"coordinates\" :[[[ 12.032089 , 4.817997 ],[ 12.023163 , 4.756414 ],[ 12.056122 , 4.733832 ],[ 12.10144 , 4.730411 ],[ 12.13028 , 4.783785 ],[ 12.117233 , 4.817312 ],[ 12.069855 , 4.822786 ],[ 12.032089 , 4.817997 ]]]}},{ \"type\" : \"Feature\" , \"properties\" :{ \"ProductionPlace\" : \"Cocoa Farm 04\" , \"Area\" : 6950.29 , \"ProducerCountry\" : \"CM\" }, \"geometry\" :{ \"type\" : \"Polygon\" , \"coordinates\" :[[[ 12.137146 , 4.827576 ],[ 12.151566 , 4.791311 ],[ 12.205811 , 4.804312 ],[ 12.229156 , 4.874784 ],[ 12.184525 , 4.878889 ],[ 12.144012 , 4.861101 ],[ 12.137146 , 4.827576 ]]]}}]}",
+   "options": {
+    "variant": "type-ii"
+   }
+  },
+  {
+   "name": "valid square with six decimals",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-5.500001,6.800001],[-5.490001,6.800001],[-5.490001,6.810001],[-5.500001,6.810001],[-5.500001,6.800001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "point with area",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\",\"Area\":2.5},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.500001,6.800001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "point without area",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.500001,6.800001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "point area as text",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\",\"Area\":\"3\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.500001,6.800001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "point area as bad text",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\",\"Area\":\"3,5 ha\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.500001,6.800001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "point area below minimum",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\",\"Area\":9e-05},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.500001,6.800001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "point area at minimum",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\",\"Area\":0.0001},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.500001,6.800001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "point area exactly 4 ha",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\",\"Area\":4},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.500001,6.800001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "point area above 4 ha, no commodity",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\",\"Area\":4.0001},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.500001,6.800001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "point area above 4 ha, cocoa",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\",\"Area\":12},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.500001,6.800001]}}]}",
+   "options": {
+    "commodity": "cocoa"
+   }
+  },
+  {
+   "name": "point area above 4 ha, cattle",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\",\"Area\":12},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.500001,6.800001]}}]}",
+   "options": {
+    "commodity": "cattle"
+   }
+  },
+  {
+   "name": "open ring",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-5.500001,6.800001],[-5.490001,6.800001],[-5.490001,6.810001],[-5.500001,6.810001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "repeated vertex",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-5.500001,6.800001],[-5.490001,6.800001],[-5.490001,6.800001],[-5.490001,6.810001],[-5.500001,6.810001],[-5.500001,6.800001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "repeat only after truncation",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-5.5000011234,6.8000011234],[-5.4900011234,6.8000011234],[-5.4900015678,6.8000015678],[-5.4900011234,6.8100011234],[-5.5000011234,6.8100011234],[-5.5000011234,6.8000011234]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "spike",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-5.500001,6.800001],[-5.490001,6.800001],[-5.480001,6.800001],[-5.490001,6.800001],[-5.490001,6.810001],[-5.500001,6.810001],[-5.500001,6.800001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "collinear ring",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-5.500001,6.800001],[-5.490001,6.800001],[-5.480001,6.800001],[-5.500001,6.800001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "too few positions",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-5.500001,6.800001],[-5.490001,6.800001],[-5.500001,6.800001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "collapses after truncation",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-5.5000011,6.8000011],[-5.5000012,6.8000011],[-5.5000012,6.8000012],[-5.5000011,6.8000011]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "bowtie",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-5.500001,6.800001],[-5.490001,6.810001],[-5.490001,6.800001],[-5.500001,6.810001],[-5.500001,6.800001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "figure eight touching at a vertex",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.005001,0.005001],[0.010001,0.010001],[1e-06,0.010001],[0.005001,0.005001],[1e-06,1e-06]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "vertex touching a side",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[0.005001,1e-06],[1e-06,0.010001],[1e-06,1e-06]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "hole",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-5.500001,6.800001],[-5.490001,6.800001],[-5.490001,6.810001],[-5.500001,6.810001],[-5.500001,6.800001]],[[-5.498001,6.802001],[-5.498001,6.804001],[-5.496001,6.804001],[-5.496001,6.802001],[-5.498001,6.802001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "clockwise exterior",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-5.500001,6.800001],[-5.500001,6.810001],[-5.490001,6.810001],[-5.490001,6.800001],[-5.500001,6.800001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "concave valid",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.020001,1e-06],[0.020001,0.020001],[0.010001,0.005001],[1e-06,0.020001],[1e-06,1e-06]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "tiny polygon",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[6e-06,1e-06],[6e-06,6e-06],[1e-06,6e-06],[1e-06,1e-06]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "multipolygon disjoint parts",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"MultiPolygon\",\"coordinates\":[[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]],[[[0.020001,1e-06],[0.030001,1e-06],[0.030001,0.010001],[0.020001,0.010001],[0.020001,1e-06]]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "multipolygon overlapping parts",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"MultiPolygon\",\"coordinates\":[[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]],[[[0.005001,0.005001],[0.015001,0.005001],[0.015001,0.015001],[0.005001,0.015001],[0.005001,0.005001]]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "multipolygon parts sharing a side",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"MultiPolygon\",\"coordinates\":[[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]],[[[0.010001,1e-06],[0.020001,1e-06],[0.020001,0.010001],[0.010001,0.010001],[0.010001,1e-06]]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "multipolygon parts touching at a corner",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"MultiPolygon\",\"coordinates\":[[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]],[[[0.010001,0.010001],[0.020001,0.010001],[0.020001,0.020001],[0.010001,0.020001],[0.010001,0.010001]]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "single-part multipolygon",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"MultiPolygon\",\"coordinates\":[[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "single-position multipoint",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"MultiPoint\",\"coordinates\":[[1e-06,1e-06]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "empty multipoint",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"MultiPoint\",\"coordinates\":[]}}]}",
+   "options": {}
+  },
+  {
+   "name": "nested geometry collection",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"GeometryCollection\",\"geometries\":[{\"type\":\"GeometryCollection\",\"geometries\":[{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]},{\"type\":\"Point\",\"coordinates\":[0.100001,0.100001]}]},{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}]}}]}",
+   "options": {}
+  },
+  {
+   "name": "single geometry collection",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"GeometryCollection\",\"geometries\":[{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}]}}]}",
+   "options": {}
+  },
+  {
+   "name": "linestring",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"LineString\",\"coordinates\":[[0,0],[1,1]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "lower-case type name",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "null geometry",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":null}]}",
+   "options": {}
+  },
+  {
+   "name": "feature without geometry member",
+   "format": "geojson",
+   "input": "{\"type\": \"FeatureCollection\", \"features\": [{\"type\": \"Feature\", \"properties\": {}}]}",
+   "options": {}
+  },
+  {
+   "name": "non-feature item",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Point\",\"coordinates\":[1,2]}]}",
+   "options": {}
+  },
+  {
+   "name": "single feature",
+   "format": "geojson",
+   "input": "{\"type\": \"Feature\", \"properties\": {\"ProductionPlace\": \"P\", \"ProducerCountry\": \"CI\", \"Area\": 1}, \"geometry\": {\"type\": \"Point\", \"coordinates\": [1e-06, 1e-06]}}",
+   "options": {}
+  },
+  {
+   "name": "bare point",
+   "format": "geojson",
+   "input": "{\"type\": \"Point\", \"coordinates\": [1e-06, 1e-06]}",
+   "options": {}
+  },
+  {
+   "name": "point as array of positions",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[[1.000001,2.000001]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "position with one value",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1.000001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "position with text values",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[\"1.000001\",\"2.000001\"]}}]}",
+   "options": {}
+  },
+  {
+   "name": "longitude out of range",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[200.000001,6.000001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "latitude out of range, swapped",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[6.000001,120.000001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "altitude",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06,120],[0.010001,1e-06,120],[0.010001,0.010001,120],[1e-06,0.010001,120],[1e-06,1e-06,120]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "excess precision",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.8227391234,44.2567071234]}}]}",
+   "options": {}
+  },
+  {
+   "name": "low precision",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0.1,0.1],[0.2,0.1],[0.2,0.2],[0.1,0.2],[0.1,0.1]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "property name case",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"productionplace\":\"X\",\"producercountry\":\"CI\",\"area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}}]}",
+   "options": {}
+  },
+  {
+   "name": "property name case clash",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"X\",\"productionplace\":\"Y\",\"ProducerCountry\":\"CI\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}}]}",
+   "options": {}
+  },
+  {
+   "name": "country lower case",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"X\",\"ProducerCountry\":\" ci\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}}]}",
+   "options": {}
+  },
+  {
+   "name": "country invalid",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"X\",\"ProducerCountry\":\"ZZ\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}}]}",
+   "options": {}
+  },
+  {
+   "name": "country XK",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"X\",\"ProducerCountry\":\"XK\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}}]}",
+   "options": {}
+  },
+  {
+   "name": "country as number",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"X\",\"ProducerCountry\":76,\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}}]}",
+   "options": {}
+  },
+  {
+   "name": "type II without country",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"X\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}}]}",
+   "options": {
+    "variant": "type-ii"
+   }
+  },
+  {
+   "name": "country filled by option",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"X\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}}]}",
+   "options": {
+    "country": "CI"
+   }
+  },
+  {
+   "name": "producer name not text",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"X\",\"ProducerCountry\":\"CI\",\"ProducerName\":12,\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}}]}",
+   "options": {}
+  },
+  {
+   "name": "producer name too long",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"X\",\"ProducerCountry\":\"CI\",\"ProducerName\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}}]}",
+   "options": {}
+  },
+  {
+   "name": "unknown properties stripped",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"X\",\"ProducerCountry\":\"CI\",\"Area\":1,\"farmer_phone\":\"+225\",\"__proto__\":{\"polluted\":true}},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}}]}",
+   "options": {
+    "strip_unknown_properties": true
+   }
+  },
+  {
+   "name": "legacy crs naming WGS 84",
+   "format": "geojson",
+   "input": "{\"type\": \"FeatureCollection\", \"crs\": {\"type\": \"name\", \"properties\": {\"name\": \"urn:ogc:def:crs:OGC:1.3:CRS84\"}}, \"features\": [{\"type\": \"Feature\", \"properties\": {\"ProductionPlace\": \"P\", \"ProducerCountry\": \"CI\", \"Area\": 1}, \"geometry\": {\"type\": \"Point\", \"coordinates\": [1e-06, 1e-06]}}]}",
+   "options": {}
+  },
+  {
+   "name": "crs other than WGS 84",
+   "format": "geojson",
+   "input": "{\"type\": \"FeatureCollection\", \"crs\": {\"type\": \"name\", \"properties\": {\"name\": \"urn:ogc:def:crs:EPSG::3857\"}}, \"features\": [{\"type\": \"Feature\", \"properties\": {\"ProductionPlace\": \"P\", \"ProducerCountry\": \"CI\", \"Area\": 1}, \"geometry\": {\"type\": \"Point\", \"coordinates\": [1e-06, 1e-06]}}]}",
+   "options": {}
+  },
+  {
+   "name": "bbox and foreign members",
+   "format": "geojson",
+   "input": "{\"type\": \"FeatureCollection\", \"bbox\": [0, 0, 1, 1], \"name\": \"x\", \"features\": [{\"type\": \"Feature\", \"properties\": {\"ProductionPlace\": \"P\", \"ProducerCountry\": \"CI\", \"Area\": 1}, \"geometry\": {\"type\": \"Point\", \"coordinates\": [1e-06, 1e-06]}, \"bbox\": [0, 0, 1, 1], \"extra\": 1}]}",
+   "options": {}
+  },
+  {
+   "name": "identical duplicates",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}},{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "same geometry, other properties",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"one\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}},{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"two\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "same polygon, rotated start",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}},{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06],[0.010001,1e-06]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "overlapping plots",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"a\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}},{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"c\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0.005001,0.005001],[0.015001,0.005001],[0.015001,0.015001],[0.005001,0.015001],[0.005001,0.005001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "neighbouring plots sharing a side",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"a\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}},{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"d\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0.010001,1e-06],[0.020001,1e-06],[0.020001,0.010001],[0.010001,0.010001],[0.010001,1e-06]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "plot inside another",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"big\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.100001,1e-06],[0.100001,0.100001],[1e-06,0.100001],[1e-06,1e-06]]]}},{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"small\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0.040001,0.040001],[0.050001,0.040001],[0.050001,0.050001],[0.040001,0.050001],[0.040001,0.040001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "antimeridian crossing",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[179.990001,-17.800001],[-179.990001,-17.800001],[-179.990001,-17.790001],[179.990001,-17.790001],[179.990001,-17.800001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "ring around the pole",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,85.000001],[120.000001,85.000001],[-120.000001,85.000001],[1e-06,85.000001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "polygon near the north pole",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[15.000001,89.900001],[15.050001,89.900001],[15.050001,89.950001],[15.000001,89.950001],[15.000001,89.900001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "point at the south pole",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,-90]}}]}",
+   "options": {}
+  },
+  {
+   "name": "huge polygon",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[20.000001,30.000001],[30.000001,30.000001],[30.000001,40.000001],[20.000001,40.000001],[20.000001,30.000001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "empty collection",
+   "format": "geojson",
+   "input": "{\"type\": \"FeatureCollection\", \"features\": []}",
+   "options": {}
+  },
+  {
+   "name": "over the size limit",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"p0\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}},{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"p1\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0.020001,1e-06],[0.030001,1e-06],[0.030001,0.010001],[0.020001,0.010001],[0.020001,1e-06]]]}},{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"p2\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0.040001,1e-06],[0.050001000000000004,1e-06],[0.050001000000000004,0.010001],[0.040001,0.010001],[0.040001,1e-06]]]}},{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"p3\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0.060001,1e-06],[0.070001,1e-06],[0.070001,0.010001],[0.060001,0.010001],[0.060001,1e-06]]]}}]}",
+   "options": {
+    "max_bytes": 500
+   }
+  },
+  {
+   "name": "too many producers",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProducerName\":\"n0\",\"ProducerCountry\":\"CI\",\"ProductionPlace\":\"x\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1e-06,1e-06]}},{\"type\":\"Feature\",\"properties\":{\"ProducerName\":\"n1\",\"ProducerCountry\":\"CI\",\"ProductionPlace\":\"x\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[2e-06,1e-06]}},{\"type\":\"Feature\",\"properties\":{\"ProducerName\":\"n2\",\"ProducerCountry\":\"CI\",\"ProductionPlace\":\"x\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"coordinates\":[3e-06,1e-06]}}]}",
+   "options": {
+    "variant": "type-ii",
+    "max_producers": 2
+   }
+  },
+  {
+   "name": "check budget runs out",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.001001,0.001001],[0.002001,1e-06],[0.003001,0.001001],[0.004001,1e-06],[0.005001,0.001001],[0.006001,1e-06],[0.007001,0.001001],[0.008001,1e-06],[0.009001,0.001001],[0.010001,1e-06],[0.011000999999999999,0.001001],[0.012001,1e-06],[0.013001,0.001001],[0.014001,1e-06],[0.015000999999999999,0.001001],[0.016001,1e-06],[0.017001000000000002,0.001001],[0.018001000000000003,1e-06],[0.019001,0.001001],[0.020001,1e-06],[0.021001000000000002,0.001001],[0.022001,1e-06],[0.023001,0.001001],[0.024001,1e-06],[0.025001000000000002,0.001001],[0.026001000000000003,1e-06],[0.027001,0.001001],[0.028001,1e-06],[0.029001000000000002,0.001001],[0.030001,0.050001],[1e-06,0.050001],[1e-06,1e-06]]]}}]}",
+   "options": {
+    "check_budget": 10
+   }
+  },
+  {
+   "name": "simplify collinear",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProductionPlace\":\"P\",\"ProducerCountry\":\"CI\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[1e-06,1e-06],[0.005001,1e-06],[0.010001,1e-06],[0.010001,0.010001],[1e-06,0.010001],[1e-06,1e-06]]]}}]}",
+   "options": {
+    "simplify_collinear": true
+   }
+  },
+  {
+   "name": "json syntax error",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[}",
+   "options": {}
+  },
+  {
+   "name": "json duplicate key",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"type\":\"Feature\",\"features\":[]}",
+   "options": {}
+  },
+  {
+   "name": "json NaN",
+   "format": "geojson",
+   "input": "{\"type\":\"Point\",\"coordinates\":[NaN,1]}",
+   "options": {}
+  },
+  {
+   "name": "json number out of range",
+   "format": "geojson",
+   "input": "{\"type\":\"Point\",\"coordinates\":[1e400,1]}",
+   "options": {}
+  },
+  {
+   "name": "json too deep",
+   "format": "geojson",
+   "input": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]",
+   "options": {}
+  },
+  {
+   "name": "json number too long",
+   "format": "geojson",
+   "input": "{\"type\":\"Point\",\"coordinates\":[1.11111111111111111111111111111111111111111111111111111111111111111111111111111111,1]}",
+   "options": {}
+  },
+  {
+   "name": "not geojson",
+   "format": "geojson",
+   "input": "{\"hello\":\"world\"}",
+   "options": {}
+  },
+  {
+   "name": "unknown top-level type",
+   "format": "geojson",
+   "input": "{\"type\":\"Topology\"}",
+   "options": {}
+  },
+  {
+   "name": "csv points",
+   "format": "csv",
+   "input": "longitude,latitude,ProducerName,country,area\n-5.500001,6.800001,Ana,CI,1.5\n-5.400001,6.700001,Bo,ci,\"2\"\n",
+   "options": {}
+  },
+  {
+   "name": "csv polygon by plot id, semicolons, decimal commas",
+   "format": "csv",
+   "input": "plot;lon;lat;Area\nA;-5,500001;6,800001;3,5\nA;-5,490001;6,800001;\nA;-5,490001;6,810001;\nB;-5,4;6,7;0,5\n",
+   "options": {}
+  },
+  {
+   "name": "csv missing latitude column",
+   "format": "csv",
+   "input": "lon,foo\n1,2\n",
+   "options": {}
+  },
+  {
+   "name": "csv bad coordinate",
+   "format": "csv",
+   "input": "lon,lat\nabc,6.800001\n200000,1\n",
+   "options": {}
+  },
+  {
+   "name": "csv quoted cells",
+   "format": "csv",
+   "input": "lon,lat,ProductionPlace\n-5.500001,6.800001,\"Farm, \"\"north\"\"\"\n",
+   "options": {}
+  },
+  {
+   "name": "csv unclosed quote",
+   "format": "csv",
+   "input": "lon,lat,ProductionPlace\n-5.500001,6.800001,\"Farm\n",
+   "options": {}
+  },
+  {
+   "name": "kml polygon and point",
+   "format": "kml",
+   "input": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<kml xmlns=\"http://www.opengis.net/kml/2.2\"><Document><!-- c --><Placemark><name>Farm &amp; field</name><ExtendedData><Data name=\"ProducerCountry\"><value>CI</value></Data><Data name=\"Area\"><value>2.5</value></Data></ExtendedData><Polygon><outerBoundaryIs><LinearRing><coordinates>-5.500001,6.800001,0 -5.490001,6.800001,0 -5.490001,6.810001,0 -5.500001,6.810001,0 -5.500001,6.800001,0</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark><Folder><Placemark><name><![CDATA[Point <1>]]></name><Point><coordinates>-5.4,6.7</coordinates></Point></Placemark></Folder></Document></kml>\n",
+   "options": {}
+  },
+  {
+   "name": "kml multigeometry",
+   "format": "kml",
+   "input": "<kml><Placemark><MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>0.000001,0.000001 0.010001,0.000001 0.010001,0.010001 0.000001,0.000001</coordinates></LinearRing></outerBoundaryIs></Polygon><Polygon><outerBoundaryIs><LinearRing><coordinates>0.020001,0.000001 0.030001,0.000001 0.030001,0.010001 0.020001,0.000001</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry></Placemark></kml>",
+   "options": {}
+  },
+  {
+   "name": "kml linestring",
+   "format": "kml",
+   "input": "<kml><Placemark><LineString><coordinates>0,0 1,1</coordinates></LineString></Placemark></kml>",
+   "options": {}
+  },
+  {
+   "name": "kml doctype refused",
+   "format": "kml",
+   "input": "<?xml version=\"1.0\"?><!DOCTYPE kml [<!ENTITY a \"aaaa\">]><kml><Placemark><name>&a;</name></Placemark></kml>",
+   "options": {}
+  },
+  {
+   "name": "kml unknown entity",
+   "format": "kml",
+   "input": "<kml><Placemark><name>&nbsp;</name><Point><coordinates>0,0</coordinates></Point></Placemark></kml>",
+   "options": {}
+  },
+  {
+   "name": "kml without kml root",
+   "format": "kml",
+   "input": "<gpx></gpx>",
+   "options": {}
+  },
+  {
+   "name": "review: out of range only before truncation",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProducerCountry\":\"FJ\",\"ProductionPlace\":\"x\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[180.0000001,-16.5],[179.9,-16.5],[179.9,-16.4],[180.0000001,-16.4],[180.0000001,-16.5]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "review: out of range after truncation too",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProducerCountry\":\"FJ\",\"ProductionPlace\":\"x\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[180.0000001,-16.5],[179.9,-16.5],[179.9,-90.0000011],[180.0000001,-16.5]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "review: antimeridian cut off the grid",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProducerCountry\":\"FJ\",\"ProductionPlace\":\"x\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[179.999999,-16.000001],[-179.999997,-16.000002],[-179.999998,-16.000009],[179.999999,-16.000005],[179.999999,-16.000001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "review: spike returning past its base",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProducerCountry\":\"BR\",\"ProductionPlace\":\"x\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[0.001,0],[0.001,0.001],[0.001,-0.0005],[0.001,0.0005],[0,0.001],[0,0]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "review: vertex touching a side",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProducerCountry\":\"BR\",\"ProductionPlace\":\"x\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[0.002,0],[0.002,0.002],[0.001,0],[0,0.002],[0,0]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "review: ring collapsing under truncation",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProducerCountry\":\"BR\",\"ProductionPlace\":\"x\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0.0000001,0.0000001],[0.0000009,0.0000002],[0.0000005,0.0000009],[0.0000001,0.0000001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "review: zig-zag becoming straight under truncation",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProducerCountry\":\"BR\",\"ProductionPlace\":\"x\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[0.0000015,0.0000005],[0.000003,0],[0.000003,0.000001],[0,0.000001],[0,0]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "review: small plot near the antimeridian and a pole",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProducerCountry\":\"BR\",\"ProductionPlace\":\"x\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[179.99,-85],[179.9901,-85],[179.9901,-84.9999],[179.99,-84.9999],[179.99,-85]]]}},{\"type\":\"Feature\",\"properties\":{\"ProducerCountry\":\"BR\",\"ProductionPlace\":\"x\"},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-179.9999,70.0001],[-179.9999,70],[-179.9998,70],[-179.9999,70.0001]]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "review: MultiPoint Area below the minimum",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProducerCountry\":\"BR\",\"ProductionPlace\":\"x\",\"Area\":1e-05},\"geometry\":{\"type\":\"MultiPoint\",\"coordinates\":[[1.000001,2.000001],[1.000002,2.000002]]}}]}",
+   "options": {}
+  },
+  {
+   "name": "review: csv quoted cells after whitespace",
+   "format": "csv",
+   "input": "lon,lat,producer,place\n1.000001,2.000001, \"Ana, Lda\" ,x\"y\"z\n1.000002,2.000002,\"\"\"Q\"\"\",  \"\"\n",
+   "options": {}
+  },
+  {
+   "name": "review: csv astral characters",
+   "format": "csv",
+   "input": "lon,lat,place\n1.000001,2.000001,🌳🌳 farm\n",
+   "options": {}
+  },
+  {
+   "name": "review: kml text in pieces",
+   "format": "kml",
+   "input": "<kml><Placemark><name>Far<!-- c -->m <![CDATA[A&B]]> &amp; co</name><Point><coordinates>1.000001,<!-- c -->2.000001</coordinates></Point></Placemark></kml>",
+   "options": {}
+  },
+  {
+   "name": "review: crs on a feature, not WGS 84",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"crs\":{\"type\":\"name\",\"properties\":{\"name\":\"urn:ogc:def:crs:EPSG::32633\"}},\"properties\":{\"ProducerCountry\":\"BR\",\"ProductionPlace\":\"x\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[1.000001,2.000001]}}]}",
+   "options": {}
+  },
+  {
+   "name": "review: crs on a geometry naming WGS 84",
+   "format": "geojson",
+   "input": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"ProducerCountry\":\"BR\",\"ProductionPlace\":\"x\",\"Area\":1},\"geometry\":{\"type\":\"Point\",\"crs\":{\"type\":\"name\",\"properties\":{\"name\":\"urn:ogc:def:crs:OGC:1.3:CRS84\"}},\"coordinates\":[1.000001,2.000001]}}]}",
+   "options": {}
+  }
+ ]
+}

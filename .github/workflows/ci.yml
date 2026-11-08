@@ -1,0 +1,66 @@
+name: CI
+
+# Runs on pull requests and on demand only. No push or scheduled runs.
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22', '24']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - run: npm audit --omit=dev --audit-level=low
+      - run: npm run build && npm pack --dry-run --json > "$RUNNER_TEMP/pack.json"
+      - run: node scripts/check-pack.mjs "$RUNNER_TEMP/pack.json"
+
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.13']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install and test (shared vectors included)
+        working-directory: python
+        run: |
+          python -m venv /tmp/venv && /tmp/venv/bin/pip install .
+          (cd tests && /tmp/venv/bin/python -I -m unittest discover -s .)
+
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Run the action on the repository's examples (expected to find errors)
+        id: plots
+        uses: ./
+        continue-on-error: true
+        with:
+          glob: 'examples/*.geojson'
+      - name: Check the outcome
+        env:
+          FAILED: ${{ steps.plots.outputs.failed }}
+        run: test "$FAILED" = "true"

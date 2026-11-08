@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plotline"
+version = "0.1.0"
+description = "Geolocation files for the EU Deforestation Regulation (EU) 2023/1115: validate, repair, measure and split plot GeoJSON for the EUDR Information System, offline. Same rules as the Plotline TypeScript package."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE", "LICENSE-ADDITIONAL-TERMS.md"]
+authors = [{ name = "MB AFKzona Group" }]
+keywords = ["eudr", "deforestation", "geojson", "geolocation", "traces", "regulation 2023/1115"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+  "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = []
+
+[project.scripts]
+plotline-py = "plotline.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/afkzonagroup/plotline"
+Issues = "https://github.com/afkzonagroup/plotline/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+plotline = ["rules.json"]

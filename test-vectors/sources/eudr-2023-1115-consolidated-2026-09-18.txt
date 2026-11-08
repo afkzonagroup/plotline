@@ -1,0 +1,318 @@
+Source: Regulation (EU) 2023/1115, consolidated text of 18 September 2026 (amendments M1 Regulation (EU) 2024/3234, M2 Regulation (EU) 2025/2650, M3 Delegated Regulation (EU) 2026/2102).
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023R1115-20260918
+Excerpts (Articles 2, 4, 4a, 9, 33, 38, Annexes II and III) retrieved 8 November 2026. Markup removed; the text is unchanged.
+
+Article 2 
+ Definitions 
+ For the purposes of this Regulation, the following definitions apply: 
+ (1) 
+ ‘relevant commodities’ means cattle, cocoa, coffee, oil palm, rubber, soya and wood; 
+ (2) 
+ ‘relevant products’ means products listed in Annex I that contain, have been fed with or have been made using relevant commodities; 
+ (3) 
+ ‘deforestation’ means the conversion of forest to agricultural use, whether human-induced or not; 
+ (4) 
+ ‘forest’ means land spanning more than 0,5 hectares with trees higher than 5 metres and a canopy cover of more than 10 %, or trees able to reach those thresholds in situ, excluding land that is predominantly under agricultural or urban land use; 
+ (5) 
+ ‘agricultural use’ means the use of land for the purpose of agriculture, including for agricultural plantations and set-aside agricultural areas, and for rearing livestock; 
+ (6) 
+ ‘agricultural plantation’ means land with tree stands in agricultural production systems, such as fruit tree plantations, oil palm plantations, olive orchards and agroforestry systems where crops are grown under tree cover; it includes all plantations of relevant commodities other than wood; agricultural plantations are excluded from the definition of ‘forest’; 
+ (7) 
+ ‘forest degradation’ means structural changes to forest cover, taking the form of the conversion of: 
+ (a) 
+ primary forests or naturally regenerating forests into plantation forests or into other wooded land; or 
+ (b) 
+ primary forests into planted forests; 
+ (8) 
+ ‘primary forest’ means naturally regenerated forest of native tree species, where there are no clearly visible indications of human activities and the ecological processes are not significantly disturbed; 
+ (9) 
+ ‘naturally regenerating forest’ means forest predominantly composed of trees established through natural regeneration; it includes any of the following: 
+ (a) 
+ forests for which it is not possible to distinguish whether planted or naturally regenerated; 
+ (b) 
+ forests with a mix of naturally regenerated native tree species and planted or seeded trees, and where the naturally regenerated trees are expected to constitute the major part of the growing stock at stand maturity; 
+ (c) 
+ coppice from trees originally established through natural regeneration; 
+ (d) 
+ naturally regenerated trees of introduced species; 
+ (10) 
+ ‘planted forest’ means forest predominantly composed of trees established through planting and/or deliberate seeding, provided that the planted or seeded trees are expected to constitute more than 50 % of the growing stock at maturity; it includes coppice from trees that were originally planted or seeded; 
+ (11) 
+ ‘plantation forest’ means a planted forest that is intensively managed and meets, at planting and stand maturity, all the following criteria: one or two species, even age class, and regular spacing; it includes short rotation plantations for wood, fibre and energy, and excludes forests planted for protection or ecosystem restoration, as well as forests established through planting or seeding, which at stand maturity resemble or will resemble naturally regenerating forests; 
+ (12) 
+ ‘other wooded land’ means land not classified as ‘forest’ spanning more than 0,5 hectares, with trees higher than 5 metres and a canopy cover of 5 to 10 %, or trees able to reach those thresholds in situ, or with a combined cover of shrubs, bushes and trees above 10 %, excluding land that is predominantly under agricultural or urban land use; 
+ (13) 
+ ‘deforestation-free’ means: 
+ (a) 
+ that the relevant products contain, have been fed with or have been made using, relevant commodities that were produced on land that has not been subject to deforestation after 31 December, 2020; and 
+ (b) 
+ in the case of relevant products that contain or have been made using wood, that the wood has been harvested from the forest without inducing forest degradation after 31 December, 2020; 
+ (14) 
+ ‘produced’ means grown, harvested, obtained from or raised on relevant plots of land or, as regards cattle, on establishments; 
+ ▼M2 
+ (15) 
+ ‘operator’ means any natural or legal person who, in the course of a commercial activity, places relevant products on the market or exports them, excluding downstream operators; 
+ ▼M2 
+ (15a) 
+ ‘micro or small primary operator’ means an operator who is a natural person or a micro-undertaking or small undertaking, within the meaning of Article 3(1) and Article 3(2), first subparagraph, respectively, of Directive 2013/34/EU of the European Parliament and of the Council ( 
+ 1 
+ ), irrespective of its legal form, established in a country classified as low risk in accordance with Article 29 of this Regulation, and who, in the course of a commercial activity, places on the market or exports relevant products that this operator itself has grown, harvested, obtained from or raised on relevant plots of land, or, as regards cattle, on establishments located in that country; this includes operators who exceed the limits of at least two of the three criteria set out in Article 3(1) and (2), first subparagraph, of Directive 2013/34/EU but who can demonstrate that the parts of their balance sheet total, net turnover and average number of employees during the financial year, related to the relevant commodities and the relevant products, do not exceed the limits of at least two of three of those criteria; 
+ (15b) 
+ ‘downstream operator’ means any natural or legal person who, in the course of a commercial activity, places on the market or exports relevant products made using relevant products, all of which are covered by a due diligence statement or by a simplified declaration; 
+ ▼B 
+ (16) 
+ ‘placing on the market’ means the first making available of a relevant commodity or relevant product on the Union market; 
+ ▼M2 
+ (17) 
+ ‘trader’ means any person in the supply chain other than the operator or downstream operator who, in the course of a commercial activity, makes relevant products available on the market; 
+ ▼B 
+ (18) 
+ ‘making available on the market’ means any supply of a relevant product for distribution, consumption or use on the Union market in the course of a commercial activity, whether in return for payment or free of charge; 
+ ▼M2 
+ (19) 
+ ‘in the course of a commercial activity’ means for the purpose of processing, for distribution to commercial or non-commercial consumers, or for use in the business of the operator, downstream operator or trader itself; 
+ ▼B 
+ (20) 
+ ‘person’ means a natural person, a legal person or any association of persons which is not a legal person, but which is recognised under Union or national law as having the capacity to perform legal acts; 
+ (21) 
+ ‘person established in the Union’ means: 
+ (a) 
+ in the case of a natural person, any person whose place of residence is in the Union; 
+ (b) 
+ in the case of a legal person or an association of persons, any person whose registered office, central headquarters or a permanent business establishment is in the Union; 
+ ▼M2 
+ (22) 
+ ‘authorised representative’ means any natural or legal person established in the Union who, in accordance with Article 6, has received a written mandate from an operator to act on its behalf in relation to specified tasks with regard to the operator’s obligations under this Regulation; 
+ ▼B 
+ (23) 
+ ‘country of origin’ means a country or territory as referred to in Article 60 of Regulation (EU) No 952/2013; 
+ (24) 
+ ‘country of production’ means the country or territory where the relevant commodity or the relevant commodity used in the production of, or contained in, a relevant product was produced; 
+ (25) 
+ ‘non-compliant products’ means relevant products that do not comply with Article 3; 
+ (26) 
+ ‘negligible risk’ means the level of risk that applies to relevant commodities and relevant products, where, on the basis of a full assessment of product-specific and general information, and, where necessary, of the application of the appropriate mitigation measures, those commodities or products show no cause for concern as being not in compliance with Article 3, point (a) or (b); 
+ (27) 
+ ‘plot of land’ means land within a single real-estate property, as recognised by the law of the country of production, which enjoys sufficiently homogeneous conditions to allow an evaluation of the aggregate level of risk of deforestation and forest degradation associated with relevant commodities produced on that land; 
+ (28) 
+ ‘geolocation’ means the geographical location of a plot of land described by means of latitude and longitude coordinates corresponding to at least one latitude and one longitude point and using at least six decimal digits; for plots of land of more than four hectares used for the production of the relevant commodities other than cattle, this shall be provided using polygons with sufficient latitude and longitude points to describe the perimeter of each plot of land; 
+ (29) 
+ ‘establishment’ means any premises, structure, or, in the case of open-air farming, any environment or place, where livestock are kept, on a temporary or permanent basis; 
+ ▼M2 
+ (30) 
+ ‘micro, small and medium-sized enterprises’ or ‘SMEs’ means micro, small and medium-sized undertakings, irrespective of their legal form, within the meaning of Article 3(1), Article 3(2), first subparagraph, and Article 3(3), respectively, of Directive 2013/34/EU; 
+ ▼B 
+ (31) 
+ ‘substantiated concern’ means a duly reasoned claim based on objective and verifiable information regarding non-compliance with this Regulation and which could require the intervention of competent authorities; 
+ (32) 
+ ‘competent authorities’ means the authorities designated under Article 14(1); 
+ (33) 
+ ‘customs authorities’ means customs authorities as defined in Article 5, point (1), of Regulation (EU) No 952/2013; 
+ (34) 
+ ‘customs territory’ means territory as defined in Article 4 of Regulation (EU) No 952/2013; 
+ (35) 
+ ‘third country’ means a country or territory outside the customs territory of the Union; 
+ (36) 
+ ‘release for free circulation’ means the procedure laid down in Article 201 of Regulation (EU) No 952/2013; 
+ (37) 
+ ‘export’ means the procedure laid down in Article 269 of Regulation (EU) No 952/2013; 
+ (38) 
+ ‘relevant products entering the market’ means relevant products from third countries placed under the customs procedure ‘release for free circulation’ that are intended to be placed on the Union market and are not intended for private use or consumption within the customs territory of the Union; 
+Article 4 
+ Obligations of operators 
+ 1. 
+ Operators shall exercise due diligence in accordance with Article 8 prior to placing relevant products on the market or exporting them in order to prove that the relevant products comply with Article 3. 
+ 2. 
+ Operators shall not place relevant products on the market or export them without prior submission of a due diligence statement. Operators who, on the basis of the due diligence exercised in accordance with Article 8, conclude that the relevant products comply with Article 3 shall, before placing the relevant products on the market or exporting them, make available a due diligence statement to the competent authorities through the information system referred to in Article 33. Such electronically available and transmittable due diligence statement shall contain the information set out in Annex II for the relevant products and a declaration by the operator that the operator exercised due diligence and that no or only a negligible risk was found. 
+ ▼M2 
+ 3. 
+ By making the due diligence statement available to competent authorities or, in the case of micro or small primary operators, by submitting the simplified declaration referred to in Article 4a, the operator shall assume responsibility for the compliance of the relevant product with Article 3. Operators shall keep a record of the due diligence statements for five years from the date the statement is submitted through the information system referred to in Article 33. 
+ ▼B 
+ 4. 
+ Operators shall not place relevant products on the market or export them where one or more of the following cases apply: 
+ (a) 
+ the relevant products are non-compliant; 
+ (b) 
+ the exercise of due diligence has revealed a non-negligible risk that the relevant products are non-compliant; 
+ (c) 
+ the operator was unable to fulfil the obligations referred to in paragraphs 1 and 2. 
+ ▼M2 
+ 5. 
+ Operators that obtain or are made aware of relevant new information, including substantiated concerns, indicating that a relevant product that they have placed on the market is at risk of not complying with this Regulation shall immediately inform the competent authorities of the Member States in which they placed the relevant product on the market, as well as downstream operators and traders to whom they supplied the relevant product. In the case of exports, the operators shall inform the competent authority of the Member State which is the country of production. 
+ ▼B 
+ 6. 
+ Operators shall offer all necessary assistance to the competent authorities to facilitate the carrying out of the checks under Article 18, including access to premises and the making available of documentation and records. 
+ ▼M2 
+ 7. 
+ Operators shall communicate to downstream operators and to traders further down the supply chain of the relevant products they placed on the market or exported the reference numbers of the due diligence statements or, if applicable, the declaration identifiers associated to those products. 
+ ▼M2 ————— 
+ ▼M2 
+ Article 4a 
+ Simplified regime for micro or small primary operators 
+ 1. 
+ The obligations laid down in Article 4(2), Article 4(3), second sentence, and Article 4(4), point (c), shall not apply to micro or small primary operators. 
+ 2. 
+ Micro or small primary operators shall submit a one-time simplified declaration in the information system referred to in Article 33 before placing relevant products on the market or exporting them. Those operators shall be assigned a declaration identifier after submitting their one-time simplified declaration. 
+ 3. 
+ Micro or small primary operators shall provide the information set out in Annex III when submitting the simplified declaration in the information system referred to in Article 33. Those operators may update the information contained in their simplified declaration following any major changes to the information they provided. 
+ 4. 
+ Where all information listed in Annex III is available in a system or database that exists under Union or Member State law, other than the information system referred to in Article 33, micro or small primary operators shall not be required to submit a one-time simplified declaration in accordance with paragraph 2 of this Article. Member States shall make that information per operator available in the information system referred to in Article 33. The micro or small primary operator shall place the relevant products on the Union market or export them only after having been assigned a declaration identifier. 
+ 5. 
+ For micro or small primary operators, the geolocation referred to in Article 9(1), point (d), may be replaced by the postal address of all plots of land or the postal address of the establishment from which the relevant commodities that the relevant product contains, or has been made using, were produced. 
+ ▼M2 
+Article 4a 
+ Simplified regime for micro or small primary operators 
+ 1. 
+ The obligations laid down in Article 4(2), Article 4(3), second sentence, and Article 4(4), point (c), shall not apply to micro or small primary operators. 
+ 2. 
+ Micro or small primary operators shall submit a one-time simplified declaration in the information system referred to in Article 33 before placing relevant products on the market or exporting them. Those operators shall be assigned a declaration identifier after submitting their one-time simplified declaration. 
+ 3. 
+ Micro or small primary operators shall provide the information set out in Annex III when submitting the simplified declaration in the information system referred to in Article 33. Those operators may update the information contained in their simplified declaration following any major changes to the information they provided. 
+ 4. 
+ Where all information listed in Annex III is available in a system or database that exists under Union or Member State law, other than the information system referred to in Article 33, micro or small primary operators shall not be required to submit a one-time simplified declaration in accordance with paragraph 2 of this Article. Member States shall make that information per operator available in the information system referred to in Article 33. The micro or small primary operator shall place the relevant products on the Union market or export them only after having been assigned a declaration identifier. 
+ 5. 
+ For micro or small primary operators, the geolocation referred to in Article 9(1), point (d), may be replaced by the postal address of all plots of land or the postal address of the establishment from which the relevant commodities that the relevant product contains, or has been made using, were produced. 
+ ▼M2 
+Article 9 
+ Information requirements 
+ 1. 
+ Operators shall collect information, documents and data which demonstrate that the relevant products comply with Article 3. For this purpose, the operator shall collect, organise and keep for five years from the date of the placing on the market or of the export of the relevant products the following information, accompanied by evidence, relating to each relevant product: 
+ (a) 
+ a description, including the trade name and type of the relevant products as well as, in the case of relevant products that contain or have been made using wood, the common name of the species and their full scientific name; the product description shall include the list of relevant commodities or relevant products contained therein or used to make those products; 
+ ▼M2 
+ (b) 
+ the quantity of the relevant products; for relevant products entering or leaving the market, the quantity is to be expressed in kilograms of net mass and, where applicable, in the supplementary unit set out in Annex I to Council Regulation (EEC) No 2658/87 ( 
+ 2 
+ ) against the indicated Harmonised System code, or, in all other cases, the quantity is to be expressed in net mass or, where applicable, volume or number of items; a supplementary unit is applicable where it is defined consistently for all possible subheadings under the Harmonised System code referred to in the due diligence statement or where provided as part of the simplified declaration; 
+ ▼B 
+ (c) 
+ the country of production and, where relevant, parts thereof; 
+ (d) 
+ the geolocation of all plots of land where the relevant commodities that the relevant product contains, or has been made using, were produced, as well as the date or time range of production; where a relevant product contains or has been made with relevant commodities produced on different plots of land, the geolocation of all different plots of land shall be included; any deforestation or forest degradation on the given plots of land shall automatically disqualify all relevant commodities and relevant products from those plots of land from being placed or made available on the market or exported; for relevant products that contain or have been made using cattle, and for such relevant products that have been fed with relevant products, the geolocation shall refer to all the establishments where the cattle were kept; for all other relevant products of Annex I, the geolocation shall refer to the plots of land; 
+ (e) 
+ the name, postal address and email address of any business or person from whom they have been supplied with the relevant products; 
+ ▼M2 
+ (f) 
+ the name, postal address and email address of any business, downstream operator or trader to whom the relevant products have been supplied; 
+ ▼B 
+ (g) 
+ adequately conclusive and verifiable information that the relevant products are deforestation-free; 
+ (h) 
+ adequately conclusive and verifiable information that the relevant commodities have been produced in accordance with the relevant legislation of the country of production, including any arrangement conferring the right to use the respective area for the purposes of the production of the relevant commodity. 
+ 2. 
+ The operator shall make available to the competent authorities upon request the information, documents and data collected under this Article. 
+Article 33 
+ Information system 
+ 1. 
+ By 30 December 2024, the Commission shall establish and subsequently shall maintain an information system which shall contain the due diligence statements made available pursuant to Article 4(2). 
+ 2. 
+ Without prejudice to the fulfilment of obligations established in Chapters 2 and 3, the information system shall provide at least the following functionalities: 
+ (a) 
+ registration of operators and traders and their authorised representatives in the Union; for operators placing relevant products under the customs procedure ‘release for free circulation’ or ‘export’, the Economic Operators Registration and Identification (EORI) number established pursuant to Article 9 of Regulation (EU) No 952/2013, shall be included in their registration profile; 
+ ▼M2 
+ (aa) 
+ registration of non-SME downstream operators and non-SME traders in accordance with Article 5(2); 
+ ▼M2 
+ (b) 
+ registration of due diligence statements including the communication to the operator concerned of a reference number for each due diligence statement submitted through the information system; 
+ (c) 
+ registration of simplified declarations submitted by micro or small primary operators and assignment of a declaration identifier to the operator concerned; 
+ ▼B 
+ (d) 
+ where possible, the conversion of data from relevant systems to identify the geolocation; 
+ (e) 
+ registration of the outcome of checks on due diligence statements; 
+ (f) 
+ interconnection with customs through the European Union Single Window Environment for Customs, in accordance with Article 28, including to allow the notifications and requests referred to in Article 26(6) to (9); 
+ ▼M2 
+ (g) 
+ provision of relevant information to support the risk-profiling for the plan of checks referred to in Article 16(5), including results of checks, the risk-profiling of operators, downstream operators, traders and relevant commodities and relevant products for the purpose of identifying, based on electronic data-processing techniques, operators, downstream operators and traders to be checked as referred to in Article 16(5), and relevant products to be checked by competent authorities; 
+ ▼B 
+ (h) 
+ facilitation of administrative assistance and cooperation between competent authorities, and between competent authorities and the Commission, to exchange information and data; 
+ ▼M2 
+ (i) 
+ support communication between competent authorities and operators, downstream operators and traders for the purposes of implementation of this Regulation, including, where appropriate, through the use of digital supply management tools. 
+ 3. 
+ The Commission shall, by means of implementing acts, establish rules for the functioning of the information system under this Article, including: 
+ (a) 
+ rules for the protection of personal data and the exchange of data with other IT systems; 
+ (b) 
+ contingency arrangements in the event of the unavailability of the functionalities of the information system. 
+ Those implementing acts shall be adopted in accordance with the examination procedure referred to in Article 36(2). 
+ 4. 
+ The Commission shall provide access to that information system to customs authorities, competent authorities, operators, downstream operators and traders and, if applicable, their authorised representatives, in accordance with their respective obligations under this Regulation. 
+ ▼B 
+ 5. 
+ In line with the Union’s Open Data Policy, the Commission shall provide access to the wider public to the complete anonymised datasets of the information system in an open format that can be machine-readable and that ensures interoperability, re-use and accessibility. 
+Article 38 
+ Entry into force and date of application 
+ 1. 
+ This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union . 
+ 2. 
+ Subject to paragraph 3 of this Article, Articles 3 to 13, Articles 16 to 24 and Articles 26, 31 and 32 shall apply from 30 December 2026. 
+ 3. 
+ Except as regards the products covered by the Annex to Regulation (EU) No 995/2010, for operators, whether natural persons or micro- or small undertakings within the meaning of Article 3(1) or Article 3(2), first subparagraph, respectively, of Directive 2013/34/EU, irrespective of their legal form, who were established as such by 31 December 2024, the Articles referred to in paragraph 2 of this Article shall apply from 30 June 2027. 
+ ▼B 
+ This Regulation shall be binding in its entirety and directly applicable in all Member States. 
+ ANNEX I 
+ Relevant commodities and relevant products as referred to in Article 1 
+ The following table lists goods as classified in the Combined Nomenclature set out in Annex I to Regulation (EEC) No 2658/87 that are referred to in Article 1 of this Regulation. 
+ Except for by-products of a manufa
+ANNEX II 
+ Due diligence statement 
+ Information to be contained in the due diligence statement in accordance with Article 4(2): 
+ 1. 
+ Operator’s name, address and, in the event of relevant commodities and relevant products entering or leaving the market, the Economic Operators Registration and Identification (EORI) number in accordance with Article 9 of Regulation (EU) No 952/2013. 
+ 2. 
+ Harmonised System code, free-text description, including the trade name as well as, where applicable, the full scientific name, and quantity of the relevant product that the operator intends to place on the market or export. For relevant products entering or leaving the market, the quantity is to be expressed in kilograms of net mass and, where applicable, in the supplementary unit set out in Annex I to Regulation (EEC) No 2658/87 against the indicated Harmonised System code or, in all other cases, expressed in net mass specifying a percentage estimate or deviation or, where applicable, volume or number of items. A supplementary unit is applicable where it is defined consistently for all possible subheadings under the Harmonised System code referred to in the due diligence statement. 
+ 3. 
+ Country of production and the geolocation of all plots of land where the relevant commodities were produced. For relevant products that contain or have been made using cattle, and for such relevant products that have been fed with relevant products, the geolocation shall refer to all the establishments where the cattle were kept. Where the relevant product contains or has been made using commodities produced in different plots of land, the geolocation of all plots of land shall be included in accordance with Article 9(1), point (d). 
+ ▼M2 ————— 
+ ▼B 
+ 5. 
+ The text: ‘By submitting this due diligence statement the operator confirms that due diligence in accordance with Regulation (EU) 2023/1115 was carried out and that no or only a negligible risk was found that the relevant products do not comply with Article 3, point (a) or (b), of that Regulation.’. 
+ 6. 
+ Signature in the following format: 
+ ‘Signed for and on behalf of: 
+ Date: 
+ Name and function: Signature:’. 
+ ▼M2 
+ ANNEX III 
+ Simplified declaration for micro or small primary operators 
+ Information to be contained in the one-time simplified declaration for micro or small primary operators in accordance with Article 4a(3): 
+ 1. 
+ Micro or small primary operator’s name, address and, in the event of relevant commodities and relevant products entering or leaving the market, the Economic Operators Registration and Identification (EORI) number in accordance with Article 9 of Regulation (EU) No 952/2013. 
+ 2. 
+ Harmonised System code and free-text description of the relevant products, including the trade name, and the one-off estimated annual quantity of relevant products intended to be placed on the market or exported, expressed in net mass specifying a percentage estimate or deviation or, where applicable, volume or number of items. For relevant products entering or leaving the market, the estimated quantity is to be expressed in kilograms of net mass and, where applicable, in the supplementary unit set out in Annex I to Regulation (EEC) No 2658/87 against the indicated Harmonised System code or, in all other cases, expressed in net mass specifying a percentage estimate or deviation or, where applicable, volume or number of items. A supplementary unit is applicable where it is defined consistently for all possible subheadings under the Harmonised System code referred to in the due diligence statement. 
+ 3. 
+ Country of production and the geolocation of all plots of land, or the postal address of the establishment or of all plots of land on which the micro or small primary operator produces relevant commodities. For relevant products that contain or have been made using cattle, and for such relevant products that have been fed with relevant products, the postal address or the geolocation shall refer to all the establishments where the cattle are kept. Where the relevant products are produced on different plots of land, the postal address or the geolocation of all plots of land shall be included in accordance with Article 9(1), point (d). 
+ 4. 
+ The text: ‘By this declaration, the micro or small primary operator confirms that it will exercise due diligence in accordance with Regulation (EU) 2023/1115 for the relevant products it places on the market or exports and that it will place them on the market or export them only if no or only a negligible risk is found that the relevant products do not comply with Article 3, point (a) or (b), of that Regulation.’. 
+ ( 
+ 1 
+ ) Directive 2013/34/EU of the European Parliament and of the Council of 26 June 2013 on the annual financial statements, consolidated financial statements and related reports of certain types of undertakings, amending Directive 2006/43/EC of the European Parliament and of the Council and repealing Council Directives 78/660/EEC and 83/349/EEC (OJ L 182, 29.6.2013, p. 19, ELI: http://data.europa.eu/eli/dir/2013/34/oj ). 
+ ( 
+ 2 
+ ) Council Regulation (EEC) No 2658/87 of 23 July 1987 on the tariff and statistical nomenclature and on the Common Customs Tariff (OJ L 256, 7.9.1987, p. 1, ELI: http://data.europa.eu/eli/reg/1987/2658/oj ). 
+ ( 
+ 3 
+ ) Directive (EU) 2018/2001 of the European Parliament and of the Council of 11 December 2018 on the promotion of the use of energy from renewable sources (OJ L 328, 21.12.2018, p. 82). 
+ ( 
+ 4 
+ ) Directive 2003/4/EC of the European Parliament and of the Council of 28 January 2003 on public access to environmental information and repealing Council Directive 90/313/EEC (OJ L 41, 14.2.2003, p. 26). 
+ ( 
+ 5 
+ ) Directive 2008/99/EC of the European Parliament and of the Council of 19 November 2008 on the protection of the environment through criminal law (OJ L 328, 6.12.2008, p. 28, ELI: http://data.europa.eu/eli/dir/2008/99/oj ). 
+ ( 
+ 6 
+ ) Council Regulation (EC) No 139/2004 of 20 January 2004 on the control of concentrations between undertakings (the EC Merger Regulation) (OJ L 24, 29.1.2004, p. 1, ELI: http://data.europa.eu/eli/reg/2004/139/oj ). 
+ ( 
+ 7 
+ ) Regulation (EU) 2022/2399 of the European Parliament and of the Council of 23 November 2022 establishing the European Union Single Window Environment for Customs and amending Regulation (EU) No 952/2013 (OJ L 317, 9.12.2022, p. 1, ELI: http://data.europa.eu/eli/reg/2022/2399/oj ). 
+ ( 
+ 8 
+ ) Directive (EU) 2019/1937 of the European Parliament and of the Council of 23 October 2019 on the protection of persons who report breaches of Union law (OJ L 305, 26.11.2019, p. 17, ELI: http://data.europa.eu/eli/dir/2019/1937/oj ). 
+ ( 
+ 9 
+ ) Regulation (EU) No 182/2011 of the European Parliament and of the Council of 16 February 2011 laying down the rules and general principles concerning mechanisms for control by Member States of the Commission’s exercise of implementing powers (OJ L 55, 28.2.2011, p. 13).

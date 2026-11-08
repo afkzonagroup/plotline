@@ -1,0 +1,17 @@
+Source: Commission Implementing Regulation (EU) 2026/1565 of 13 July 2026 amending Implementing Regulation (EU) 2024/3084 (OJ L, 2026/1565, 14.7.2026).
+https://eur-lex.europa.eu/eli/reg_impl/2026/1565/oj
+Excerpts (new Article 8a; new Article 15(4)) retrieved 8 November 2026.
+
+Article 8a 
+ Grouping of Due Diligence Statements and Simplified Declarations within the Information System 
+ 1. Information System users may group individual Due Diligence Statements or Simplified Declarations by submitting a new Due Diligence Statement or Simplified Declaration that references individual Due Diligence Statements or Simplified Declarations previously submitted by the same Information System user, or for the same operator or micro or small primary operator by an authorised representative, if applicable, via the previously submitted reference numbers or declaration identifiers (“grouped Due Diligence Statement or Simplified Declaration”). 
+ 2. The Information System shall assign a specific status to the individual Due Diligence Statements or Simplified Declarations once they are referenced in the grouped Due Diligence Statement or Simplified Declaration to identify that they are grouped and replaced by the grouped Due Diligence Statement or Simplified Declaration. 
+ 3. The grouped Due Diligence Statement or Simplified Declaration shall represent the individual Due Diligence Statement or Simplified Declaration for the purposes of compliance with Regulation (EU) 2023/1115. The grouped Due Diligence Statement or Simplified Declaration shall therefore cover the placing on the market or export of the relevant products included in the individual Due Diligence Statements or Simplified Declarations referenced therein. For the purposes of compliance with Articles 4(7) and 26(4) of Regulation (EU) 2023/1115, instead of the individual reference numbers or declaration identifiers which were assigned a specific status in accordance with paragraph 2, Information System users shall communicate or make available the reference number or declaration identifier of the grouped Due Diligence Statement or Simplified Declaration.’ 
+ ; 
+The Commission may put in place the following measures: 
+ (a) 
+ measures to ensure the continued availability of the Information System by specifying conditions for individual interactions, including specifying technical limits for file size and regulating the frequency of interactions; 
+ (b) 
+ measures to prevent the submission of incorrect, superfluous or duplicated data. 
+ The Commission shall inform competent authorities and Information System users about the measures taken pursuant to this paragraph without delay.’ 
+ ;

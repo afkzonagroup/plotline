@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-typecheck
+coverage
+.git
+.github
+test
+test-vectors
+python
+docs
+examples
+*.log

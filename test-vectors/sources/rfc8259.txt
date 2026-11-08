@@ -1,0 +1,27 @@
+Source: RFC 8259, The JSON Data Interchange Format (December 2017). https://www.rfc-editor.org/rfc/rfc8259.txt
+Section 4, retrieved 8 November 2026.
+
+4. Objects
+ An object structure is represented as a pair of curly brackets
+ surrounding zero or more name/value pairs (or members). A name is a
+ string. A single colon comes after each name, separating the name
+ from the value. A single comma separates a value from a following
+ name. The names within an object SHOULD be unique.
+ object = begin-object [ member *( value-separator member ) ]
+ end-object
+ member = string name-separator value
+ An object whose names are all unique is interoperable in the sense
+ that all software implementations receiving that object will agree on
+ the name-value mappings. When the names within an object are not
+ unique, the behavior of software that receives such an object is
+ unpredictable. Many implementations report the last name/value pair
+ only. Other implementations report an error or fail to parse the
+Bray Standards Track [Page 6]
+RFC 8259 JSON December 2017
+ object, and some implementations report all of the name/value pairs,
+ including duplicates.
+ JSON parsing libraries have been observed to differ as to whether or
+ not they make the ordering of object members visible to calling
+ software. Implementations whose behavior does not depend on member
+ ordering will be interoperable in the sense that they will not be
+ affected by these differences.

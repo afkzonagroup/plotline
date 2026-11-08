@@ -1,0 +1,316 @@
+Source: RFC 7946, The GeoJSON Format (August 2016). https://www.rfc-editor.org/rfc/rfc7946.txt
+Sections 3 to 5 and 11.2, retrieved 8 November 2026. Page headers and footers removed.
+
+3. GeoJSON Object
+ A GeoJSON object represents a Geometry, Feature, or collection of
+ Features.
+ o A GeoJSON object is a JSON object.
+ o A GeoJSON object has a member with the name "type". The value of
+ the member MUST be one of the GeoJSON types.
+ o A GeoJSON object MAY have a "bbox" member, the value of which MUST
+ be a bounding box array (see Section 5).
+ o A GeoJSON object MAY have other members (see Section 6).
+3.1. Geometry Object
+ A Geometry object represents points, curves, and surfaces in
+ coordinate space. Every Geometry object is a GeoJSON object no
+ matter where it occurs in a GeoJSON text.
+ o The value of a Geometry object's "type" member MUST be one of the
+ seven geometry types (see Section 1.4).
+ o A GeoJSON Geometry object of any type other than
+ "GeometryCollection" has a member with the name "coordinates".
+ The value of the "coordinates" member is an array. The structure
+ of the elements in this array is determined by the type of
+ geometry. GeoJSON processors MAY interpret Geometry objects with
+ empty "coordinates" arrays as null objects.
+3.1.1. Position
+ A position is the fundamental geometry construct. The "coordinates"
+ member of a Geometry object is composed of either:
+ o one position in the case of a Point geometry,
+ o an array of positions in the case of a LineString or MultiPoint
+ geometry,
+ o an array of LineString or linear ring (see Section 3.1.6)
+ coordinates in the case of a Polygon or MultiLineString geometry,
+ or
+ o an array of Polygon coordinates in the case of a MultiPolygon
+ geometry.
+ A position is an array of numbers. There MUST be two or more
+ elements. The first two elements are longitude and latitude, or
+ easting and northing, precisely in that order and using decimal
+ numbers. Altitude or elevation MAY be included as an optional third
+ element.
+ Implementations SHOULD NOT extend positions beyond three elements
+ because the semantics of extra elements are unspecified and
+ ambiguous. Historically, some implementations have used a fourth
+ element to carry a linear referencing measure (sometimes denoted as
+ "M") or a numerical timestamp, but in most situations a parser will
+ not be able to properly interpret these values. The interpretation
+ and meaning of additional elements is beyond the scope of this
+ specification, and additional elements MAY be ignored by parsers.
+ A line between two positions is a straight Cartesian line, the
+ shortest line between those two points in the coordinate reference
+ system (see Section 4).
+ In other words, every point on a line that does not cross the
+ antimeridian between a point (lon0, lat0) and (lon1, lat1) can be
+ calculated as
+ F(lon, lat) = (lon0 + (lon1 - lon0) * t, lat0 + (lat1 - lat0) * t)
+ with t being a real number greater than or equal to 0 and smaller
+ than or equal to 1. Note that this line may markedly differ from the
+ geodesic path along the curved surface of the reference ellipsoid.
+ The same applies to the optional height element with the proviso that
+ the direction of the height is as specified in the coordinate
+ reference system.
+ Note that, again, this does not mean that a surface with equal height
+ follows, for example, the curvature of a body of water. Nor is a
+ surface of equal height perpendicular to a plumb line.
+ Examples of positions and geometries are provided in Appendix A,
+ "Geometry Examples".
+3.1.2. Point
+ For type "Point", the "coordinates" member is a single position.
+3.1.3. MultiPoint
+ For type "MultiPoint", the "coordinates" member is an array of
+ positions.
+3.1.4. LineString
+ For type "LineString", the "coordinates" member is an array of two or
+ more positions.
+3.1.5. MultiLineString
+ For type "MultiLineString", the "coordinates" member is an array of
+ LineString coordinate arrays.
+3.1.6. Polygon
+ To specify a constraint specific to Polygons, it is useful to
+ introduce the concept of a linear ring:
+ o A linear ring is a closed LineString with four or more positions.
+ o The first and last positions are equivalent, and they MUST contain
+ identical values; their representation SHOULD also be identical.
+ o A linear ring is the boundary of a surface or the boundary of a
+ hole in a surface.
+ o A linear ring MUST follow the right-hand rule with respect to the
+ area it bounds, i.e., exterior rings are counterclockwise, and
+ holes are clockwise.
+ Note: the [GJ2008] specification did not discuss linear ring winding
+ order. For backwards compatibility, parsers SHOULD NOT reject
+ Polygons that do not follow the right-hand rule.
+ Though a linear ring is not explicitly represented as a GeoJSON
+ geometry type, it leads to a canonical formulation of the Polygon
+ geometry type definition as follows:
+ o For type "Polygon", the "coordinates" member MUST be an array of
+ linear ring coordinate arrays.
+ o For Polygons with more than one of these rings, the first MUST be
+ the exterior ring, and any others MUST be interior rings. The
+ exterior ring bounds the surface, and the interior rings (if
+ present) bound holes within the surface.
+3.1.7. MultiPolygon
+ For type "MultiPolygon", the "coordinates" member is an array of
+ Polygon coordinate arrays.
+3.1.8. GeometryCollection
+ A GeoJSON object with type "GeometryCollection" is a Geometry object.
+ A GeometryCollection has a member with the name "geometries". The
+ value of "geometries" is an array. Each element of this array is a
+ GeoJSON Geometry object. It is possible for this array to be empty.
+ Unlike the other geometry types described above, a GeometryCollection
+ can be a heterogeneous composition of smaller Geometry objects. For
+ example, a Geometry object in the shape of a lowercase roman "i" can
+ be composed of one point and one LineString.
+ GeometryCollections have a different syntax from single type Geometry
+ objects (Point, LineString, and Polygon) and homogeneously typed
+ multipart Geometry objects (MultiPoint, MultiLineString, and
+ MultiPolygon) but have no different semantics. Although a
+ GeometryCollection object has no "coordinates" member, it does have
+ coordinates: the coordinates of all its parts belong to the
+ collection. The "geometries" member of a GeometryCollection
+ describes the parts of this composition. Implementations SHOULD NOT
+ apply any additional semantics to the "geometries" array.
+ To maximize interoperability, implementations SHOULD avoid nested
+ GeometryCollections. Furthermore, GeometryCollections composed of a
+ single part or a number of parts of a single type SHOULD be avoided
+ when that single part or a single object of multipart type
+ (MultiPoint, MultiLineString, or MultiPolygon) could be used instead.
+3.1.9. Antimeridian Cutting
+ In representing Features that cross the antimeridian,
+ interoperability is improved by modifying their geometry. Any
+ geometry that crosses the antimeridian SHOULD be represented by
+ cutting it in two such that neither part's representation crosses the
+ antimeridian.
+ For example, a line extending from 45 degrees N, 170 degrees E across
+ the antimeridian to 45 degrees N, 170 degrees W should be cut in two
+ and represented as a MultiLineString.
+ {
+ "type": "MultiLineString",
+ "coordinates": [
+ [
+ [170.0, 45.0], [180.0, 45.0]
+ ], [
+ [-180.0, 45.0], [-170.0, 45.0]
+ ]
+ ]
+ }
+ A rectangle extending from 40 degrees N, 170 degrees E across the
+ antimeridian to 50 degrees N, 170 degrees W should be cut in two and
+ represented as a MultiPolygon.
+ {
+ "type": "MultiPolygon",
+ "coordinates": [
+ [
+ [
+ [180.0, 40.0], [180.0, 50.0], [170.0, 50.0],
+ [170.0, 40.0], [180.0, 40.0]
+ ]
+ ],
+ [
+ [
+ [-170.0, 40.0], [-170.0, 50.0], [-180.0, 50.0],
+ [-180.0, 40.0], [-170.0, 40.0]
+ ]
+ ]
+ ]
+ }
+3.1.10. Uncertainty and Precision
+ As in [RFC5870], the number of digits of the values in coordinate
+ positions MUST NOT be interpreted as an indication to the level of
+ uncertainty.
+3.2. Feature Object
+ A Feature object represents a spatially bounded thing. Every Feature
+ object is a GeoJSON object no matter where it occurs in a GeoJSON
+ text.
+ o A Feature object has a "type" member with the value "Feature".
+ o A Feature object has a member with the name "geometry". The value
+ of the geometry member SHALL be either a Geometry object as
+ defined above or, in the case that the Feature is unlocated, a
+ JSON null value.
+ o A Feature object has a member with the name "properties". The
+ value of the properties member is an object (any JSON object or a
+ JSON null value).
+ o If a Feature has a commonly used identifier, that identifier
+ SHOULD be included as a member of the Feature object with the name
+ "id", and the value of this member is either a JSON string or
+ number.
+3.3. FeatureCollection Object
+ A GeoJSON object with the type "FeatureCollection" is a
+ FeatureCollection object. A FeatureCollection object has a member
+ with the name "features". The value of "features" is a JSON array.
+ Each element of the array is a Feature object as defined above. It
+ is possible for this array to be empty.
+4. Coordinate Reference System
+ The coordinate reference system for all GeoJSON coordinates is a
+ geographic coordinate reference system, using the World Geodetic
+ System 1984 (WGS 84) [WGS84] datum, with longitude and latitude units
+ of decimal degrees. This is equivalent to the coordinate reference
+ system identified by the Open Geospatial Consortium (OGC) URN
+ urn:ogc:def:crs:OGC::CRS84. An OPTIONAL third-position element SHALL
+ be the height in meters above or below the WGS 84 reference
+ ellipsoid. In the absence of elevation values, applications
+ sensitive to height or depth SHOULD interpret positions as being at
+ local ground or sea level.
+ Note: the use of alternative coordinate reference systems was
+ specified in [GJ2008], but it has been removed from this version of
+ the specification because the use of different coordinate reference
+ systems -- especially in the manner specified in [GJ2008] -- has
+ proven to have interoperability issues. In general, GeoJSON
+ processing software is not expected to have access to coordinate
+ reference system databases or to have network access to coordinate
+ reference system transformation parameters. However, where all
+ involved parties have a prior arrangement, alternative coordinate
+ reference systems can be used without risk of data being
+ misinterpreted.
+5. Bounding Box
+ A GeoJSON object MAY have a member named "bbox" to include
+ information on the coordinate range for its Geometries, Features, or
+ FeatureCollections. The value of the bbox member MUST be an array of
+ length 2*n where n is the number of dimensions represented in the
+ contained geometries, with all axes of the most southwesterly point
+ followed by all axes of the more northeasterly point. The axes order
+ of a bbox follows the axes order of geometries.
+ The "bbox" values define shapes with edges that follow lines of
+ constant longitude, latitude, and elevation.
+ Example of a 2D bbox member on a Feature:
+ {
+ "type": "Feature",
+ "bbox": [-10.0, -10.0, 10.0, 10.0],
+ "geometry": {
+ "type": "Polygon",
+ "coordinates": [
+ [
+ [-10.0, -10.0],
+ [10.0, -10.0],
+ [10.0, 10.0],
+ [-10.0, -10.0]
+ ]
+ ]
+ }
+ //...
+ }
+ Example of a 2D bbox member on a FeatureCollection:
+ {
+ "type": "FeatureCollection",
+ "bbox": [100.0, 0.0, 105.0, 1.0],
+ "features": [
+ //...
+ ]
+ }
+ Example of a 3D bbox member with a depth of 100 meters:
+ {
+ "type": "FeatureCollection",
+ "bbox": [100.0, 0.0, -100.0, 105.0, 1.0, 0.0],
+ "features": [
+ //...
+ ]
+ }
+5.1. The Connecting Lines
+ The four lines of the bounding box are defined fully within the
+ coordinate reference system; that is, for a box bounded by the values
+ "west", "south", "east", and "north", every point on the northernmost
+ line can be expressed as
+ (lon, lat) = (west + (east - west) * t, north)
+ with 0 <= t <= 1.
+5.2. The Antimeridian
+ Consider a set of point Features within the Fiji archipelago,
+ straddling the antimeridian between 16 degrees S and 20 degrees S.
+ The southwest corner of the box containing these Features is at 20
+ degrees S and 177 degrees E, and the northwest corner is at 16
+ degrees S and 178 degrees W. The antimeridian-spanning GeoJSON
+ bounding box for this FeatureCollection is
+ "bbox": [177.0, -20.0, -178.0, -16.0]
+ and covers 5 degrees of longitude.
+ The complementary bounding box for the same latitude band, not
+ crossing the antimeridian, is
+ "bbox": [-178.0, -20.0, 177.0, -16.0]
+ and covers 355 degrees of longitude.
+ The latitude of the northeast corner is always greater than the
+ latitude of the southwest corner, but bounding boxes that cross the
+ antimeridian have a northeast corner longitude that is less than the
+ longitude of the southwest corner.
+5.3. The Poles
+ A bounding box that contains the North Pole extends from a southwest
+ corner of "minlat" degrees N, 180 degrees W to a northeast corner of
+ 90 degrees N, 180 degrees E. Viewed on a globe, this bounding box
+ approximates a spherical cap bounded by the "minlat" circle of
+ latitude.
+ "bbox": [-180.0, minlat, 180.0, 90.0]
+ A bounding box that contains the South Pole extends from a southwest
+ corner of 90 degrees S, 180 degrees W to a northeast corner of
+ "maxlat" degrees S, 180 degrees E.
+ "bbox": [-180.0, -90.0, 180.0, maxlat]
+ A bounding box that just touches the North Pole and forms a slice of
+ an approximate spherical cap when viewed on a globe extends from a
+ southwest corner of "minlat" degrees N and "westlon" degrees E to a
+ northeast corner of 90 degrees N and "eastlon" degrees E.
+ "bbox": [westlon, minlat, eastlon, 90.0]
+ Similarly, a bounding box that just touches the South Pole and forms
+ a slice of an approximate spherical cap when viewed on a globe has
+ the following representation in GeoJSON.
+ "bbox": [westlon, -90.0, eastlon, maxlat]
+ Implementers MUST NOT use latitude values greater than 90 or less
+ than -90 to imply an extent that is not a spherical cap.
+11.2. Coordinate Precision
+ The size of a GeoJSON text in bytes is a major interoperability
+ consideration, and precision of coordinate values has a large impact
+ on the size of texts. A GeoJSON text containing many detailed
+ Polygons can be inflated almost by a factor of two by increasing
+ coordinate precision from 6 to 15 decimal places. For geographic
+ coordinates with units of degrees, 6 decimal places (a default common
+ in, e.g., sprintf) amounts to about 10 centimeters, a precision well
+ within that of current GPS systems. Implementations should consider
+ the cost of using a greater precision than necessary.
+ Furthermore, the WGS 84 [WGS84] datum is a relatively coarse
+ approximation of the geoid, with the height varying by up to 5 m (but
+ generally between 2 and 3 meters) higher or lower relative to a
+ surface parallel to Earth's mean sea level.

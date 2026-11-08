@@ -1,0 +1,83 @@
+Source: European Commission, EUDR Information System - Operator API Reference, "API and UI Validation Rules".
+https://eudr.webcloud.ec.europa.eu/tracesnt/help/eudr-documentation/operator/validation-rules.html
+Retrieved 8 November 2026. Table markup removed (cells end with "|"); the text is unchanged.
+
+API and UI Validation Rules [#api-and-ui-validation-rules] ¶ 
+ Target audience [#target-audience] ¶ 
+ This document is intended to be read by Economic Operators, involved in the EU deforestation Regulation, who will use the EUDR web site (UI: User Interface) of the EUDR API (application programming interface) for managing their DDS (Due Diligence Statement). 
+ Introduction [#introduction] ¶ 
+ The EUDR central system has implemented several validation rules which are executed at different steps in the workflow of a DDS. Some rules are purely syntactical and other have business relevance. 
+ Not every rule is described in this document when they can obviously be deduced by the user in the system. For example: 
+ in the UI, when a field is numeric, characters are not allowed to be keyed in 
+ In the API, when a field has a maximum length, it is described in the XSD validation 
+ Please note that specific rules concerning the geolocation information are part of another document. Rules concerning compliance to the regulation are not described here neither. 
+ Rules description [#rules-description] ¶ 
+ Rule context | 
+ Description | 
+ Remark/Relevance | 
+ Mandatory activity type | 
+ The activity type of a DDS is mandatory. In case a DDS is amended, the activity type cannot be changed. If the operator is not from an EU country, the only allowed activity is IMPORT. | 
+ UI, API (via XSD validation) | 
+ Activity type compatibility | 
+ The selected activity type must be compatible with the rights of the user profile. | 
+ API | 
+ Activity type and identifier | 
+ The operator must have an EORI identifier if the activity type IMPORT or EXPORT is selected. | 
+ UI, API | 
+ Web service user | 
+ The web service user cannot belong to more than one operator. | 
+ API | 
+ Operator filled by an authorized representative | 
+ The mandatory fields of the operator or trader must be filled by the authorized representative (name, address and at least one identifier). The EORI number must be a valid number. | 
+ UI, API | 
+ Mandatory commodity | 
+ At least one commodity must be provided in the DDS. | 
+ UI, API (via XSD validation) | 
+ Maximum of commodities | 
+ The number of commodities per DDS cannot exceed a certain amount (presently set to 200). | 
+ UI, API (via XSD validation) | 
+ Description of a commodity | 
+ There must be a description for every commodity. | 
+ UI, API (via XSD validation) | 
+ Quantities of a commodity | 
+ At least one quantity must be provided per commodity. In addition, if the activity type is IMPORT or EXPORT then the net mass is mandatory. Values must all be positive. | 
+ UI, API | 
+ Supplementary unit type | 
+ In case a supplementary unit value is provided, the type of that value (supplementary unit type) must also be provided. | 
+ UI, API | 
+ Production country | 
+ Every production place must contain a valid country. | 
+ UI, API | 
+ Mandatory producer street and number | 
+ When a producer postal address is provided, the street and number is mandatory (error: "Street and number is mandatory for producer postal address"). The value must not contain invalid characters and must not be too short (error: "Street and number contains invalid characters or is too short"). | 
+ UI, API | 
+ Mandatory geolocation | 
+ In case at least one referenced DDS is provided, a commodity need not have production places. However, if a production place is provided, the geolocation information is required (even if there are referenced DDS). | 
+ UI, API | 
+ Geolocation area for point | 
+ In case a point is provided for a geolocation, the area is mandatory. If the user provided no data, the value 4 (ha) is introduced by default for the area. If the commodity is not cattle and the user provided a value higher than 4ha then the system will raise an error. When provided, the area must also be higher or equal to 0.0001ha. | 
+ UI, API | 
+ Geolocation invalid coordinates | 
+ Latitude and longitude values of coordinates must be in range. Note that if there are more than 6 decimals for the coordinates, the system truncate the value to 6 decimals. | 
+ UI, API | 
+ Geolocation invalid geometry | 
+ The geolocation data cannot contain invalid geometry (for ex, invalid polygons). | 
+ UI, API | 
+ Scientific and Common names | 
+ If the commodity is sourced from timber, then at least one scientific name and common name must be provided. The total number of pairs of scientific names & common names per commodity cannot exceed a certain amount (presently set to 500). | 
+ UI, API | 
+ Geolocation data size | 
+ The total size of geolocation data per DDS cannot exceed a certain amount (presently set to 25Mb). | 
+ UI, API | 
+ Geolocation Producers information | 
+ The total number of producers data per commodity cannot exceed a certain amount (presently set to 1000). The total number of producers data per DDS cannot exceed a certain amount (presently set to 10,000). | 
+ UI, API | 
+ Referenced DDS | 
+ The reference & verification numbers must correspond to an existing DDS in status Available or Archived. A DDS cannot be referenced by itself. The total number of referenced DDS per DDS cannot exceed a certain amount (presently set to 2000). | 
+ UI, API | 
+ Draft DDS | 
+ The maximum number of draft DDS per operator cannot exceed a certain amount (presently set to 50). | 
+ UI only | 
+ Amend or withdraw action | 
+ The amend or withdraw action on a DDS are available until a certain delay. If the delay is expired, only the CA can extend it. If a DDS is referenced in one or more other DDS, it cannot be amended or withdrawn. | 
+ UI, API |

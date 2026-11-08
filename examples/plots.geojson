@@ -1,0 +1,6 @@
+{"type":"FeatureCollection","features":[
+{"type":"Feature","properties":{"ProducerName":"Example Cooperative","ProducerCountry":"ci","productionplace":"Parcel A","Area":"3.2"},"geometry":{"type":"Point","coordinates":[-5.2734561234,6.8204401234]}},
+{"type":"Feature","properties":{"ProducerName":"Example Cooperative","ProducerCountry":"CI","ProductionPlace":"Parcel B"},"geometry":{"type":"Polygon","coordinates":[[[-5.281402,6.812301],[-5.281402,6.818977],[-5.270113,6.818977],[-5.270113,6.812301]]]}},
+{"type":"Feature","properties":{"ProducerName":"Example Cooperative","ProducerCountry":"CI","ProductionPlace":"Parcel C"},"geometry":{"type":"Polygon","coordinates":[[[-5.262001,6.805001],[-5.255001,6.811001],[-5.255001,6.805001],[-5.262001,6.811001],[-5.262001,6.805001]]]}},
+{"type":"Feature","properties":{"ProducerName":"Example Cooperative","ProducerCountry":"CI","ProductionPlace":"Parcel D","Area":11.5},"geometry":{"type":"Point","coordinates":[-5.250117,6.799823]}}
+]}
