@@ -29,11 +29,8 @@ AFKzona Group offers a commercial licence that adds:
   interfaces.
 - **Warranty and indemnity options.**
 - **Priority support** with agreed response times.
-- **Enterprise features** (not part of this repository): a hosted dashboard,
-  continuous checks of supplier geodata across sites, commodities and
-  statements, SSO/SAML, roles and permissions, audit evidence packs, a
-  legal-update feed that tracks changes to the Regulation and the
-  Information System rules, and SLA-backed support.
+- **Services:** integration into your systems, custom connectors and
+  features, and support agreements, quoted per project.
 
 ## Contact
 
