@@ -367,12 +367,11 @@ https://afkzonagroup.lt stays in user interfaces and generated reports
 MB AFKzona Group. "Plotline" is a trademark of MB AFKzona Group; forks must
 use another name ([TRADEMARKS.md](TRADEMARKS.md)).
 
-**Enterprise.** AFKzona Group offers a commercial licence without the AGPL
-obligations, white-label reports, and paid extras that are not part of this
-repository: a hosted dashboard, continuous checks of supplier geodata across
-sites and commodities, SSO/SAML, roles, audit evidence packs, a
-legal-update feed and SLA-backed support. See [COMMERCIAL.md](COMMERCIAL.md)
-or write to info@afkzonagroup.lt.
+**Enterprise.** MB AFKzona Group offers a commercial licence for
+organisations that cannot use the AGPL-3.0 terms (including white-label use
+without the attribution notice), integration into your systems, custom
+connectors and features, and support agreements. See
+[COMMERCIAL.md](COMMERCIAL.md) or contact info@afkzonagroup.lt.
 
 ## Contributing
 
