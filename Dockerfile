@@ -6,7 +6,7 @@
 #   docker build -t plotline .
 #   docker run --rm --cap-drop=ALL --security-opt no-new-privileges --network none -v "$PWD:/work" plotline validate plots.geojson
 
-FROM node:22-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d AS build
+FROM node:22-bookworm-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee AS build
 WORKDIR /app
 COPY package.json package-lock.json .npmrc ./
 RUN npm ci --ignore-scripts --no-audit --no-fund
@@ -14,7 +14,7 @@ COPY tsconfig.json tsconfig.build.json ./
 COPY src ./src
 RUN npx tsc -p tsconfig.build.json
 
-FROM node:22-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d
+FROM node:22-bookworm-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee
 ENV NODE_ENV=production
 WORKDIR /app
 COPY --from=build /app/dist ./dist
